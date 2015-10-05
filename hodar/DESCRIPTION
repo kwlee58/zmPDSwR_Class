@@ -1,0 +1,12 @@
+Package: hodar
+Type: Package
+Title: Convenience functions for "Data Analytics with R: A hands-on
+        approach"
+Version: 1.0
+Date: 2014-05-08
+Author: Viswa Viswanathan
+Maintainer: Viswa Viswanathan <kv.viswana@gmail.com>
+Description: This package has convenience functions that ease the process of applying the analytics techniques in the book "Data Analytics with R: A hands-on approach."
+Depends: FNN, class, arules, rpart, rpart.plot, dummies
+License: GPL-2
+Packaged: 2014-06-02 00:19:56 UTC; kv

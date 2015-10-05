@@ -1,0 +1,25 @@
+---
+title: "extrafont"
+author: "coop711"
+date: "2015년 9월 8일"
+output: html_document
+---
+
+한글 폰트 사용
+--------------
+
+```{r}
+install.packages("extrafont", repos="http://cran.rstudio.com")
+library(extrafont)
+font_import()
+fonts()
+loadfonts()
+```
+
+fonts test
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point() +
+  ggtitle("함초롬 LVT 바탕체 제목") + theme(plot.title = element_text(size=14, family="HCR Batang LVT"))
+```

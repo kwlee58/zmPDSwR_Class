@@ -1,0 +1,226 @@
+---
+title: "Chapter 4. Managing Data"
+author: "coop711"
+date: "2015년 10월 4일"
+output: html_document
+---
+
+## Cleaning Data 
+
+* Data Preparation
+    + `zmPDSwR-master/Custdata/exampleData.rData` 를 필요로 함.
+    + working directory 정리
+
+```{r}
+rm(list=ls())
+ls()
+load("../../zmPDSwR-master/Custdata//exampleData.rData")
+ls()
+str(custdata)
+custdata.2 <- custdata
+(v.to.add <- c("age.normalized", "Median.Income", "income.norm", "gp", "income.lt.30K", "age.range"))
+#(index.to.add <- which(names(custdata) %in% v.to.add))
+(v.to.retain <- setdiff(names(custdata), v.to.add))
+#custdata <- custdata[-index.to.add]
+custdata <- custdata[v.to.retain]
+str(custdata)
+```
+
+### Treating missing values 
+
+* Checking locations fo missing data
+
+```{r}
+options(width=132)
+summary(custdata[is.na(custdata$housing.type), c("recent.move", "num.vehicles")])
+```                                                
+
+* `is.employed` 변수 확인
+
+```{r}
+str(custdata)
+summary(custdata[c("housing.type", "recent.move", "num.vehicles", "is.employed")])
+```
+
+* `is.employed`의 NA를 `missing`이라는 새로운 범주로 설정
+
+```{r}
+custdata$is.employed.fix <- ifelse(is.na(custdata$is.employed), "missing", ifelse(custdata$is.employed == TRUE, "employed", "not employed"))
+summary(custdata$is.employed.fix)
+summary(factor(custdata$is.employed.fix))
+summary(as.factor(custdata$is.employed.fix))
+summary(factor(custdata$is.employed.fix, levels=c("employed", "not employed", "missing")))
+# summary(as.factor(custdata$is.employed.fix, levels=c("employed", "not employed", "missing")))
+```
+
+* `missing`의 성격 파악, not in the active workforce? (from the summary of age)
+
+```{r}
+summary(custdata[custdata$is.employed.fix=="missing", ])
+```
+
+* Rename
+
+```{r}
+custdata$is.employed.fix <- ifelse(is.na(custdata$is.employed), "not in active workforce", ifelse(custdata$is.employed == TRUE, "employed", "not employed"))
+summary(factor(custdata$is.employed.fix))
+```
+
+* Missing values is numeric data
+
+```{r}
+summary(custdata$Income)
+```
+
+* Imputation
+
+```{r}
+mean.income <- mean(custdata$Income, na.rm = TRUE)
+Income.fix <- ifelse(is.na(custdata$Income), mean.income, custdata$Income)
+summary(Income.fix)
+```
+
+* graph로 확인
+
+```{r}
+library(ggplot2)
+ggplot(custdata, aes(x = Income)) + geom_histogram(binwidth=30000, aes(y = ..density..), alpha=0.5)
+ggplot(data.frame(Income.fix), aes(x = Income.fix)) + geom_histogram(binwidth=30000, aes(y = ..density..), alpha=0.5)
+ggplot(data.frame(Income.fix), aes(x = Income.fix)) + geom_bar(stat="bin", binwidth=30000, aes(y = ..density..), alpha=0.5)
+```
+
+* Categorize
+
+```{r}
+Income.breaks <- c(0, 10000, 50000, 100000, 250000, 1000000)
+Income.groups <- cut(custdata$Income, breaks = Income.breaks, include.lowest = TRUE)
+summary(Income.groups)
+table(Income.groups, useNA = "ifany")
+str(Income.groups)
+Income.groups <- as.character(Income.groups)
+Income.groups <- ifelse(is.na(Income.groups), "no income", Income.groups)
+str(Income.groups)
+summary(Income.groups)
+summary(factor(Income.groups))
+table(Income.groups)
+```
+
+* zero income 구분
+
+```{r}
+missing.Income <- is.na(custdata$Income)
+Income.fix.2 <- ifelse(is.na(custdata$Income), 0, custdata$Income)
+ggplot(data.frame(Income.fix), aes(x = Income.fix)) + geom_histogram(binwidth=30000, aes(y = ..density..), alpha=0.5)
+ggplot(data.frame(Income.fix.2), aes(x = Income.fix.2)) + geom_histogram(binwidth=30000, aes(y = ..density..), alpha=0.5)
+```
+
+### Data Transformation
+
+* Median Income
+
+```{r}
+str(custdata)
+str(medianincome)
+summary(medianincome)
+custdata <- merge(custdata, medianincome, by.x = "state.of.res", by.y = "State")
+str(custdata)
+summary(custdata[, c("state.of.res", "income", "Median.Income")])
+custdata$income.norm <- with(custdata, income/Median.Income)
+summary(custdata$income.norm)
+```
+
+* Converting continuous variables to discrete
+
+```{r}
+custdata$income.lt.20K <- custdata$income < 20000
+summary(custdata$income.lt.20K)
+```
+
+* Converting age into ranges
+
+```{r}
+age.breaks <- c(0, 25, 65, Inf)
+custdata$age.range <- cut(custdata$age, breaks = age.breaks, include.lowest = TRUE)
+summary(custdata$age.range)
+str(custdata$age.range)
+```
+
+* Centering on mean age
+
+```{r}
+summary(custdata$age)
+mean.age <- mean(custdata$age)
+custdata$age.normalized <- custdata$age/mean.age
+summary(custdata$age.normalized)
+```
+
+* Summarizing age
+
+```{r}
+summary(custdata$age)
+sd.age <- sd(custdata$age)
+custdata$age.normalized <- (custdata$age - mean.age)/sd.age
+summary(custdata$age.normalized)
+summary(scale(custdata$age))
+```
+
+* Figure 4.2
+    + `y = as.numeric(health.ins)`와 `y = health.ins`라고 했을 때의 차이 유의.
+
+```{r}
+ggplot(subset(custdata, custdata$income > 1000), aes(x = income, y = as.numeric(health.ins))) +
+  geom_point(alpha = 0.5, position = position_jitter(w = 0.05, h = 0.05)) +
+  geom_smooth() + scale_x_log10() + annotation_logticks(sides = "bt")
+```
+
+* Figure 4.4
+    + `subset()` 설정을 하지 않으면 어떻게 될까?
+
+```{r, fig.width=9, fig.height=3}
+library(scales)
+ggplot(custdata, aes(x = income)) + geom_density() + scale_x_continuous(labels = dollar)
+ggplot(subset(custdata, custdata$income > 0), aes(x = log10(income))) + geom_density()
+ggplot(subset(custdata, custdata$income > 0), aes(x = income)) + geom_density() +
+  scale_x_log10(breaks = c(100, 1000, 10000, 100000), labels = dollar) +
+  annotation_logticks(sides = "bt")
+```
+
+* Signed log10
+
+```{r}
+signed.log10 <- function(x) {
+  ifelse(abs(x) <= 1, 0, sign(x) * log10(abs(x)))
+}
+ggplot(custdata, aes(x = log10(income))) + geom_density() + 
+  geom_density(aes(x = signed.log10(income)), linetype="dotted")
+dump("signed.log10", file="signed.log10.R")
+```
+
+## Sampling for modelling and validation
+
+### Creating a sample group column
+
+* Splitting into test and training using a random group mark
+
+```{r}
+set.seed(123456)
+custdata$gp <- runif(nrow(custdata))
+custdata.test <- subset(custdata, custdata$gp <= 0.1)
+custdata.train <- subset(custdata, custdata$gp > 0.1)
+nrow(custdata.test)
+nrow(custdata.train)
+custdata$gp.2 <- factor(ifelse(1:nrow(custdata) %in% sample(nrow(custdata), size=100), "test", "train"))
+summary(custdata$gp.2)
+table(custdata$gp.2)
+```
+
+* Record grouping
+
+```{r}
+set.seed(123456)
+str(hhdata)
+(hhdata.2 <- hhdata[1:3])
+(hh <- unique(hhdata$household_id))
+(households <- data.frame(household_id = hh, gp = runif(length(hh))))
+(hhdata.3 <- merge(hhdata.2, households, by = "household_id"))
+```

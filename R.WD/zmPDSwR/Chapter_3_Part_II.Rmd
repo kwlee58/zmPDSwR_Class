@@ -1,0 +1,175 @@
+---
+title: "Chapter_3_Part_II"
+author: "coop711"
+date: "2015년 9월 12일"
+output: html_document
+---
+
+# Relationship
+
+
+## Line Plots
+
+* Listing 3.11
+
+```{r}
+library(scales)
+library(ggplot2)
+x <- runif(100)
+y <- x^2 + 0.2*x
+ggplot(data.frame(x=x, y=y), aes(x=x, y=y)) + geom_line()
+```
+
+## Scatter Plots and Smoothing Curves
+
+* Listing 3.12
+
+```{r}
+load("chapter_3_Part_I_0912.rda")
+ls()
+custdata2 <- subset(custdata, (custdata$age > 0 & custdata$age < 100 & custdata$income > 0))
+options(digits=2)
+cor(custdata2$age, custdata2$income)
+```
+
+* Scatter Plot. 화살표를 넣기 위하여 `grid` 패키지 등록
+
+```{r}
+library(grid)
+(g1 <- ggplot(custdata2, aes(x=age, y=income)) + geom_point())
+(g2 <- g1 + ylim(0, 250000))
+(g3 <- g2 + annotate("segment", x=20, xend=50, y=225000, yend=225000, colour="blue", size=0.5, arrow=arrow(ends="both", length=unit(0.2, "cm"))) +
+   annotate("text", x=35, y=235000, label="나이와 함께 소득도 증가", family="HCR Dotum LVT", size=5, colour="red"))
+(g4 <- g3 + annotate("segment", x=60, xend=90, y=190000, yend=190000, colour="blue", size=0.5, arrow=arrow(ends="both", length=unit(0.2, "cm"))) +
+   annotate("text", x=75, y=200000, label="나이는 들고 소득은 감소", family="HCR Dotum LVT", size=5, colour="red"))
+```
+
+* Linear Fit 추가
+
+```{r}
+g1 + stat_smooth(method="lm") + ylim(0, 250000)
+```
+
+* local smoother 추가
+
+```{r}
+g1 + stat_smooth(method="loess") + ylim(0, 250000)
+```
+
+* `geom_smooth()`로 하면,
+
+```{r}
+g1 + geom_smooth() + ylim(0, 250000)
+```
+
+* Listing 3.13
+
+```{r}
+summary(custdata2$health.ins)
+(h1 <- ggplot(custdata2, aes(x=age, y=as.numeric(health.ins))) +
+  geom_point(position=position_jitter(w=0.05, h=0.05)))
+(h2 <- h1 + geom_smooth())
+```
+
+* glm의 하나인 logistic regression으로 적합시키면,
+
+```{r}
+(h3 <- h1 + stat_smooth(method=glm, family=binomial))
+```
+
+## `hexbin` package
+
+```{r}
+library(hexbin)
+ggplot(custdata2, aes(x=age, y=income)) +
+  geom_hex(binwidth=c(5, 10000)) +
+  geom_smooth(colour="white", se=F) +
+  ylim(0, 250000)
+```
+
+## Bar Charts for Two Categorical Variables
+
+```{r}
+ggplot(custdata2, aes(x=marital.stat, fill=health.ins)) + geom_bar()
+```
+
+* `table`로 정리하고, data frame으로 만들어 작업하는데 있어서 한 가지 주의사항은 다음과 같이 `with()`를 사용하여 `table`로 만들어야 변수명을 그대로 사용할 수 있다는 점임.
+
+
+```{r}
+options(width=132)
+(tbl.mh <- with(custdata2, table(marital.stat, health.ins)))
+addmargins(tbl.mh)
+(tbl.mh.df <- data.frame(tbl.mh))
+(g.mh <- ggplot(tbl.mh.df, aes(x=marital.stat, y=Freq, fill=health.ins)) + geom_bar(stat="identity"))
+```
+
+* 몇 가지 설명을 덧붙인다면,
+
+```{r}
+g.mh + annotate("text", x=3.2, y=450, label="대부분의 고객은 결혼", family="HCR Dotum LVT", size=4) +
+  annotate("text", x=3, y=270, label="결혼한 적\n 없는 고객은\n보험도\n들지 않음", family="HCR Dotum LVT", size=4) +
+  annotate("text", x=4, y=150, label="홀로 된 고객은\n 드물지만,\n보험은\n 대부분 가입", family="HCR Dotum LVT", size=4)
+```
+
+* `position="dodge"`를 적용하면,
+
+```{r}
+ggplot(custdata2, aes(x=marital.stat, fill=health.ins)) + geom_bar(position="dodge")
+```
+
+* `postion="fill"`를 적용하면, 
+
+```{r}
+ggplot(custdata2, aes(x=marital.stat, fill=health.ins)) + geom_bar(position="fill")
+```
+
+* rug 를 설정하면,
+
+```{r}
+ggplot(custdata2, aes(x=marital.stat, fill=health.ins)) + geom_bar(position="fill") +
+  geom_point(aes(y=-0.05), size=0.75, alpha=0.3, position=position_jitter(h=0.01))
+```
+
+* Listing 3.17
+
+```{r}
+(g.hm <- ggplot(custdata2, aes(x=housing.type, fill=marital.stat)) + geom_bar())
+g.hm + coord_flip()
+```
+
+* 보기 좋게 다시 그리면,
+
+```{r}
+(tbl.hm <- with(custdata2, table(housing.type, marital.stat, useNA="ifany")))
+addmargins(tbl.hm)
+(tbl.hm.df <- data.frame(tbl.hm))
+ggplot(tbl.hm.df, aes(x=reorder(housing.type, Freq), y=Freq, fill=marital.stat)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  xlab("Housing Type") + ylab("Count")
+```
+
+* `facet_wrap()`을 활용하면,
+
+```{r}
+ggplot(custdata2, aes(x=marital.stat)) + geom_bar(position="dodge") +
+  facet_wrap(~housing.type, scales="free_y")
+ggplot(custdata2, aes(x=marital.stat)) + geom_bar(position="dodge", alpha=0.5) +
+  facet_wrap(~housing.type, scales="free_y") +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+ggplot(custdata2, aes(x=marital.stat)) + geom_bar(position="dodge", alpha=0.5) +
+  facet_wrap(~housing.type, scales="free_y", ncol=2) +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+ggplot(custdata2, aes(x=housing.type)) + geom_bar(position="dodge", alpha=0.5) +
+  facet_wrap(~marital.stat, scales="free_y", ncol=2) +
+  theme(axis.text.x = element_text(angle=90, hjust=1))
+```
+
+* `mosaicplot()`을 사용하면,
+
+```{r fig.width=6, fig.height=6}
+mosaicplot(tbl.hm)
+mosaicplot(tbl.hm, main="Marital Status and Housing Type", xlab="Housing Type", ylab="Marital Status", las=2)
+mosaicplot(tbl.hm, main="Marital Status and Housing Type", xlab="Housing Type", ylab="Marital Status", las=2, color=rainbow(4))
+```
