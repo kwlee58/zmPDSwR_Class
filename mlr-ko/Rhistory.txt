@@ -1,0 +1,3050 @@
+R > usedcars<-read.clipboard()
+R > str(usedcars)
+'data.frame':	54 obs. of  6 variables:
+ $ CASE      : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ PRICE     : int  30495 22250 23995 18495 20950 21500 19995 18950 15695 15995 ...
+ $ TYPE.MODEL: int  0 0 0 0 0 0 0 0 1 1 ...
+ $ AGE       : int  1 3 3 3 2 3 5 5 6 6 ...
+ $ MILEAGE   : int  7 16 8 15 26 18 24 20 13 27 ...
+ $ VENDOR    : int  0 0 1 2 4 4 0 3 0 1 ...
+R > read.clipboard()
+    year model price mileage  color transmission
+1   2011   SEL 21992    7413 Yellow         AUTO
+2   2011   SEL 20995   10926   Gray         AUTO
+3   2011   SEL 19995    7351 Silver         AUTO
+4   2011   SEL 17809   11613   Gray         AUTO
+5   2012    SE 17500    8367  White         AUTO
+6   2010   SEL 17495   25125 Silver         AUTO
+7   2011   SEL 17000   27393   Blue         AUTO
+8   2010   SEL 16995   21026 Silver         AUTO
+9   2011   SES 16995   32655 Silver         AUTO
+10  2010   SES 16995   36116 Silver         AUTO
+11  2010   SES 16995   40539  Black         AUTO
+12  2011   SES 16992    9199 Silver         AUTO
+13  2011   SEL 16950    9388  Green         AUTO
+14  2010   SES 16950   32058    Red         AUTO
+15  2011    SE 16000   15367  White         AUTO
+16  2011   SES 15999   16368   Blue         AUTO
+17  2010   SEL 15999   19926 Silver         AUTO
+18  2010   SES 15995   36049 Silver         AUTO
+19  2011   SEL 15992   11662   Blue         AUTO
+20  2011   SEL 15992   32069 Silver         AUTO
+21  2010   SES 15988   16035 Silver       MANUAL
+22  2010   SEL 15980   39943  White         AUTO
+23  2011    SE 15899   36685 Silver         AUTO
+24  2010   SEL 15889   24920  Black         AUTO
+25  2009   SEL 15688   20019   Blue         AUTO
+26  2010    SE 15500   29338   Blue         AUTO
+27  2010    SE 15499    7784  Black         AUTO
+28  2010    SE 15499   35636  Black         AUTO
+29  2010   SES 15298   22029   Gray         AUTO
+30  2009   SEL 14999   33107 Silver         AUTO
+31  2010   SES 14999   36306    Red         AUTO
+32  2009    SE 14995   34419  Black       MANUAL
+33  2011    SE 14992    4867  Black         AUTO
+34  2011   SEL 14992   18948  Black         AUTO
+35  2009   SES 14992   24030    Red         AUTO
+36  2010   SEL 14990   33036  Black         AUTO
+37  2011    SE 14989   23967  White         AUTO
+38  2010    SE 14906   37905 Silver         AUTO
+39  2010    SE 14900   28955  White         AUTO
+40  2010    SE 14893   11165  White         AUTO
+41  2010   SES 14761   44813  Black         AUTO
+42  2010   SES 14699   36469   Gray         AUTO
+43  2010   SES 14677   22143  Black       MANUAL
+44  2009   SES 14549   34046 Silver         AUTO
+45  2010    SE 14499   32703    Red         AUTO
+46  2010   SES 14495   35894 Silver         AUTO
+47  2010    SE 14495   38275  Black         AUTO
+48  2010    SE 14480   24855   Blue         AUTO
+49  2009   SEL 14477   29501   Gray       MANUAL
+50  2009   SEL 14355   35394    Red         AUTO
+51  2010    SE 14299   36447  Black         AUTO
+52  2010   SES 14275   35318  Black         AUTO
+53  2010   SES 14000   24929 Silver         AUTO
+54  2009    SE 13999   23785    Red         AUTO
+55  2010    SE 13997   15167  Black       MANUAL
+56  2010    SE 13995   13541 Silver         AUTO
+57  2010    SE 13995   20278  Black       MANUAL
+58  2009   SES 13995   46126  Black         AUTO
+59  2009   SES 13995   53733 Silver         AUTO
+60  2009   SES 13992   21108 Silver         AUTO
+61  2010    SE 13992   21721  Green         AUTO
+62  2010   SES 13992   26716   Gray       MANUAL
+63  2009   SES 13992   26887  Black         AUTO
+64  2009    SE 13991   36252 Silver       MANUAL
+65  2009    SE 13950    9450  Black         AUTO
+66  2010    SE 13950   31414  Black         AUTO
+67  2010    SE 13950   37185   Blue         AUTO
+68  2010    SE 13895   48174   Gray         AUTO
+69  2009    SE 13888   50533  White         AUTO
+70  2009    SE 13845   36713   Blue         AUTO
+71  2009   SES 13799   34888  Black         AUTO
+72  2009   SES 13742   38380  Black         AUTO
+73  2010   SEL 13687   35574   Gray         AUTO
+74  2009   SEL 13663   27528 Silver         AUTO
+75  2010   SES 13599   33302    Red         AUTO
+76  2009   SEL 13584   43369    Red         AUTO
+77  2009   SES 13425   64055  Black         AUTO
+78  2010    SE 13384   41342   Gray         AUTO
+79  2010    SE 13383   34503  Black         AUTO
+80  2010    SE 13350   16573   Blue         AUTO
+81  2009   SES 12999   32403   Blue         AUTO
+82  2009    SE 12998   34846   Blue         AUTO
+83  2007    SE 12997   39665    Red         AUTO
+84  2010    SE 12995   21325  Black         AUTO
+85  2010    SE 12995   32743  Black       MANUAL
+86  2010    SE 12995   40058  White       MANUAL
+87  2009    SE 12995   42325   Blue         AUTO
+88  2009    SE 12995   44518    Red         AUTO
+89  2009    SE 12995   53902   Gray         AUTO
+90  2008    SE 12995  127327    Red         AUTO
+91  2009    SE 12992   27136   Gray         AUTO
+92  2009   SES 12990   45813 Silver         AUTO
+93  2009    SE 12988   31538   Gray         AUTO
+94  2010    SE 12849   29517 Silver         AUTO
+95  2010    SE 12780   35871  Black         AUTO
+96  2008    SE 12777   49787  Black       MANUAL
+97  2008   SES 12704   36323   Blue         AUTO
+98  2009   SES 12595   39211   Blue         AUTO
+99  2009    SE 12507   44789   Gray         AUTO
+100 2008    SE 12500   45996  White       MANUAL
+101 2009    SE 12500   54988  White       MANUAL
+102 2009    SE 12280   29288    Red         AUTO
+103 2009    SE 11999   36124   Blue         AUTO
+104 2009    SE 11992   32559  Black       MANUAL
+105 2009   SES 11984   59048  Black         AUTO
+106 2009    SE 11980   55170    Red         AUTO
+107 2010    SE 11792   39722  Green         AUTO
+108 2008    SE 11754   38286  Black         AUTO
+109 2008   SES 11749   57341    Red         AUTO
+110 2008   SES 11495   82221 Silver         AUTO
+111 2008    SE 11450   85229    Red       MANUAL
+112 2009   SES 10995   42834    Red         AUTO
+113 2005   SES 10995   69415   Blue         AUTO
+114 2009   SEL 10995   78264   Gray         AUTO
+115 2009    SE 10979   60709    Red         AUTO
+116 2008    SE 10955   39643   Gray         AUTO
+117 2009    SE 10955   40180   Gold         AUTO
+118 2008    SE 10836   40330  Green       MANUAL
+119 2007   SES 10815   77231    Red         AUTO
+120 2007    SE 10770   72937 Silver       MANUAL
+121 2010    SE 10717   64199  Black         AUTO
+122 2007   SES 10000   63926    Red         AUTO
+123 2007   SES  9999   74427 Silver         AUTO
+124 2007   SES  9999   78948  Black       MANUAL
+125 2006    SE  9995   51311 Silver         AUTO
+126 2008    SE  9995   95364  White         AUTO
+127 2008    SE  9992   74109  White         AUTO
+128 2007    SE  9651   63296   Blue         AUTO
+129 2007   SES  9000   80605    Red         AUTO
+130 2006    SE  8999   49656 Silver         AUTO
+131 2007    SE  8996   48652 Silver       MANUAL
+132 2006    SE  8800   71331  White         AUTO
+133 2008    SE  8495  106171  Black         AUTO
+134 2008    SE  8494   68901 Silver         AUTO
+135 2009    SE  8480   70036  White       MANUAL
+136 2007   SES  7999   81596 Yellow       MANUAL
+137 2006   SES  7995   35000  Black       MANUAL
+138 2006   SES  7995   97987    Red         AUTO
+139 2003   SES  7900   96000  White         AUTO
+140 2005   SES  7488   59013    Red         AUTO
+141 2004    SE  6999  105714 Silver         AUTO
+142 2007    SE  6995   86862  White         AUTO
+143 2000    SE  6980   60161  Green         AUTO
+144 2004   SES  6980  101130   Gray         AUTO
+145 2004   SES  6950  119720  Black         AUTO
+146 2006   SES  6200   95000 Silver         AUTO
+147 2002    SE  5995   87003    Red         AUTO
+148 2000    SE  5980   96841    Red         AUTO
+149 2001    SE  4899  151479 Yellow         AUTO
+150 2000    SE  3800  109259    Red         AUTO
+R > usedcars<-read.clipboard()
+R > str(usedcars)
+'data.frame':	150 obs. of  6 variables:
+ $ year        : int  2011 2011 2011 2011 2012 2010 2011 2010 2011 2010 ...
+ $ model       : chr  "SEL" "SEL" "SEL" "SEL" ...
+ $ price       : int  21992 20995 19995 17809 17500 17495 17000 16995 16995 16995 ...
+ $ mileage     : int  7413 10926 7351 11613 8367 25125 27393 21026 32655 36116 ...
+ $ color       : chr  "Yellow" "Gray" "Silver" "Gray" ...
+ $ transmission: chr  "AUTO" "AUTO" "AUTO" "AUTO" ...
+R > table(usedcars$year)
+
+2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 
+   3    1    1    1    3    2    6   11   14   42   49   16    1 
+R > table(usedcars$model)
+
+ SE SEL SES 
+ 78  23  49 
+R > table(usedcars$color)
+
+ Black   Blue   Gold   Gray  Green    Red Silver  White Yellow 
+    35     17      1     16      5     25     32     16      3 
+R > model_table<-table(usedcars$model)
+R > color_table<-table(usedcars$color)
+R > color_pct<-prop.table(color_table)*100
+R > round(color_pct, digits=1)
+
+ Black   Blue   Gold   Gray  Green    Red Silver  White Yellow 
+  23.3   11.3    0.7   10.7    3.3   16.7   21.3   10.7    2.0 
+R > ls()
+[1] "color_pct"      "color_table"    "mekong.delta"   "mekong.delta.2" "model_table"    "usedcars"      
+R > library(ggplot2)
+
+다음의 패키지를 부착합니다: ‘ggplot2’
+
+The following object is masked from ‘package:psych’:
+
+    %+%
+
+R > setwd("~/Dropbox/Works/Class/Data_Science/mlr-ko/")
+R > ls()
+[1] "color_pct"      "color_table"    "mekong.delta"   "mekong.delta.2" "model_table"    "usedcars"      
+R > setwd("./chapter 2")
+R > read.csv("usedcars.csv")
+    year model price mileage  color transmission
+1   2011   SEL 21992    7413 Yellow         AUTO
+2   2011   SEL 20995   10926   Gray         AUTO
+3   2011   SEL 19995    7351 Silver         AUTO
+4   2011   SEL 17809   11613   Gray         AUTO
+5   2012    SE 17500    8367  White         AUTO
+6   2010   SEL 17495   25125 Silver         AUTO
+7   2011   SEL 17000   27393   Blue         AUTO
+8   2010   SEL 16995   21026 Silver         AUTO
+9   2011   SES 16995   32655 Silver         AUTO
+10  2010   SES 16995   36116 Silver         AUTO
+11  2010   SES 16995   40539  Black         AUTO
+12  2011   SES 16992    9199 Silver         AUTO
+13  2011   SEL 16950    9388  Green         AUTO
+14  2010   SES 16950   32058    Red         AUTO
+15  2011    SE 16000   15367  White         AUTO
+16  2011   SES 15999   16368   Blue         AUTO
+17  2010   SEL 15999   19926 Silver         AUTO
+18  2010   SES 15995   36049 Silver         AUTO
+19  2011   SEL 15992   11662   Blue         AUTO
+20  2011   SEL 15992   32069 Silver         AUTO
+21  2010   SES 15988   16035 Silver       MANUAL
+22  2010   SEL 15980   39943  White         AUTO
+23  2011    SE 15899   36685 Silver         AUTO
+24  2010   SEL 15889   24920  Black         AUTO
+25  2009   SEL 15688   20019   Blue         AUTO
+26  2010    SE 15500   29338   Blue         AUTO
+27  2010    SE 15499    7784  Black         AUTO
+28  2010    SE 15499   35636  Black         AUTO
+29  2010   SES 15298   22029   Gray         AUTO
+30  2009   SEL 14999   33107 Silver         AUTO
+31  2010   SES 14999   36306    Red         AUTO
+32  2009    SE 14995   34419  Black       MANUAL
+33  2011    SE 14992    4867  Black         AUTO
+34  2011   SEL 14992   18948  Black         AUTO
+35  2009   SES 14992   24030    Red         AUTO
+36  2010   SEL 14990   33036  Black         AUTO
+37  2011    SE 14989   23967  White         AUTO
+38  2010    SE 14906   37905 Silver         AUTO
+39  2010    SE 14900   28955  White         AUTO
+40  2010    SE 14893   11165  White         AUTO
+41  2010   SES 14761   44813  Black         AUTO
+42  2010   SES 14699   36469   Gray         AUTO
+43  2010   SES 14677   22143  Black       MANUAL
+44  2009   SES 14549   34046 Silver         AUTO
+45  2010    SE 14499   32703    Red         AUTO
+46  2010   SES 14495   35894 Silver         AUTO
+47  2010    SE 14495   38275  Black         AUTO
+48  2010    SE 14480   24855   Blue         AUTO
+49  2009   SEL 14477   29501   Gray       MANUAL
+50  2009   SEL 14355   35394    Red         AUTO
+51  2010    SE 14299   36447  Black         AUTO
+52  2010   SES 14275   35318  Black         AUTO
+53  2010   SES 14000   24929 Silver         AUTO
+54  2009    SE 13999   23785    Red         AUTO
+55  2010    SE 13997   15167  Black       MANUAL
+56  2010    SE 13995   13541 Silver         AUTO
+57  2010    SE 13995   20278  Black       MANUAL
+58  2009   SES 13995   46126  Black         AUTO
+59  2009   SES 13995   53733 Silver         AUTO
+60  2009   SES 13992   21108 Silver         AUTO
+61  2010    SE 13992   21721  Green         AUTO
+62  2010   SES 13992   26716   Gray       MANUAL
+63  2009   SES 13992   26887  Black         AUTO
+64  2009    SE 13991   36252 Silver       MANUAL
+65  2009    SE 13950    9450  Black         AUTO
+66  2010    SE 13950   31414  Black         AUTO
+67  2010    SE 13950   37185   Blue         AUTO
+68  2010    SE 13895   48174   Gray         AUTO
+69  2009    SE 13888   50533  White         AUTO
+70  2009    SE 13845   36713   Blue         AUTO
+71  2009   SES 13799   34888  Black         AUTO
+72  2009   SES 13742   38380  Black         AUTO
+73  2010   SEL 13687   35574   Gray         AUTO
+74  2009   SEL 13663   27528 Silver         AUTO
+75  2010   SES 13599   33302    Red         AUTO
+76  2009   SEL 13584   43369    Red         AUTO
+77  2009   SES 13425   64055  Black         AUTO
+78  2010    SE 13384   41342   Gray         AUTO
+79  2010    SE 13383   34503  Black         AUTO
+80  2010    SE 13350   16573   Blue         AUTO
+81  2009   SES 12999   32403   Blue         AUTO
+82  2009    SE 12998   34846   Blue         AUTO
+83  2007    SE 12997   39665    Red         AUTO
+84  2010    SE 12995   21325  Black         AUTO
+85  2010    SE 12995   32743  Black       MANUAL
+86  2010    SE 12995   40058  White       MANUAL
+87  2009    SE 12995   42325   Blue         AUTO
+88  2009    SE 12995   44518    Red         AUTO
+89  2009    SE 12995   53902   Gray         AUTO
+90  2008    SE 12995  127327    Red         AUTO
+91  2009    SE 12992   27136   Gray         AUTO
+92  2009   SES 12990   45813 Silver         AUTO
+93  2009    SE 12988   31538   Gray         AUTO
+94  2010    SE 12849   29517 Silver         AUTO
+95  2010    SE 12780   35871  Black         AUTO
+96  2008    SE 12777   49787  Black       MANUAL
+97  2008   SES 12704   36323   Blue         AUTO
+98  2009   SES 12595   39211   Blue         AUTO
+99  2009    SE 12507   44789   Gray         AUTO
+100 2008    SE 12500   45996  White       MANUAL
+101 2009    SE 12500   54988  White       MANUAL
+102 2009    SE 12280   29288    Red         AUTO
+103 2009    SE 11999   36124   Blue         AUTO
+104 2009    SE 11992   32559  Black       MANUAL
+105 2009   SES 11984   59048  Black         AUTO
+106 2009    SE 11980   55170    Red         AUTO
+107 2010    SE 11792   39722  Green         AUTO
+108 2008    SE 11754   38286  Black         AUTO
+109 2008   SES 11749   57341    Red         AUTO
+110 2008   SES 11495   82221 Silver         AUTO
+111 2008    SE 11450   85229    Red       MANUAL
+112 2009   SES 10995   42834    Red         AUTO
+113 2005   SES 10995   69415   Blue         AUTO
+114 2009   SEL 10995   78264   Gray         AUTO
+115 2009    SE 10979   60709    Red         AUTO
+116 2008    SE 10955   39643   Gray         AUTO
+117 2009    SE 10955   40180   Gold         AUTO
+118 2008    SE 10836   40330  Green       MANUAL
+119 2007   SES 10815   77231    Red         AUTO
+120 2007    SE 10770   72937 Silver       MANUAL
+121 2010    SE 10717   64199  Black         AUTO
+122 2007   SES 10000   63926    Red         AUTO
+123 2007   SES  9999   74427 Silver         AUTO
+124 2007   SES  9999   78948  Black       MANUAL
+125 2006    SE  9995   51311 Silver         AUTO
+126 2008    SE  9995   95364  White         AUTO
+127 2008    SE  9992   74109  White         AUTO
+128 2007    SE  9651   63296   Blue         AUTO
+129 2007   SES  9000   80605    Red         AUTO
+130 2006    SE  8999   49656 Silver         AUTO
+131 2007    SE  8996   48652 Silver       MANUAL
+132 2006    SE  8800   71331  White         AUTO
+133 2008    SE  8495  106171  Black         AUTO
+134 2008    SE  8494   68901 Silver         AUTO
+135 2009    SE  8480   70036  White       MANUAL
+136 2007   SES  7999   81596 Yellow       MANUAL
+137 2006   SES  7995   35000  Black       MANUAL
+138 2006   SES  7995   97987    Red         AUTO
+139 2003   SES  7900   96000  White         AUTO
+140 2005   SES  7488   59013    Red         AUTO
+141 2004    SE  6999  105714 Silver         AUTO
+142 2007    SE  6995   86862  White         AUTO
+143 2000    SE  6980   60161  Green         AUTO
+144 2004   SES  6980  101130   Gray         AUTO
+145 2004   SES  6950  119720  Black         AUTO
+146 2006   SES  6200   95000 Silver         AUTO
+147 2002    SE  5995   87003    Red         AUTO
+148 2000    SE  5980   96841    Red         AUTO
+149 2001    SE  4899  151479 Yellow         AUTO
+150 2000    SE  3800  109259    Red         AUTO
+R > plot(price~mileage, data=usedcars, main="가격과 주행거리", xlab="중고차 마일리지", ylab="중고차 가격")
+R > plot(price~mileage, data=usedcars, main="가격과 주행거리", xlab="중고차 마일리지(마일)", ylab="중고차 가격(달러)")
+R > install.packages("gmodels", repos="http://cran.csiro.au")
+also installing the dependency ‘gdata’
+
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/gdata_2.17.0.tgz'을 시도합니다
+Content type 'application/x-gzip' length 1133494 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/gmodels_2.16.2.tgz'을 시도합니다
+Content type 'application/x-gzip' length 71885 bytes (70 KB)
+==================================================
+downloaded 70 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+R > library(gmodels)
+R > getwd()
+[1] "/Users/coop2711/Dropbox/Works/Class/Data_Science/mlr-ko/chapter 2"
+R > usedcars$conservative <- factor(ifelse(usedcars$color %in% c("Black", "Gray", "Silver", "White"), "Conservative", "Not"))
+R > CrossTable(x=usedcars$model, y=usedcars$conservative)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  150 
+
+ 
+               | usedcars$conservative 
+usedcars$model | Conservative |          Not |    Row Total | 
+---------------|--------------|--------------|--------------|
+            SE |           51 |           27 |           78 | 
+               |        0.004 |        0.009 |              | 
+               |        0.654 |        0.346 |        0.520 | 
+               |        0.515 |        0.529 |              | 
+               |        0.340 |        0.180 |              | 
+---------------|--------------|--------------|--------------|
+           SEL |           16 |            7 |           23 | 
+               |        0.044 |        0.086 |              | 
+               |        0.696 |        0.304 |        0.153 | 
+               |        0.162 |        0.137 |              | 
+               |        0.107 |        0.047 |              | 
+---------------|--------------|--------------|--------------|
+           SES |           32 |           17 |           49 | 
+               |        0.004 |        0.007 |              | 
+               |        0.653 |        0.347 |        0.327 | 
+               |        0.323 |        0.333 |              | 
+               |        0.213 |        0.113 |              | 
+---------------|--------------|--------------|--------------|
+  Column Total |           99 |           51 |          150 | 
+               |        0.660 |        0.340 |              | 
+---------------|--------------|--------------|--------------|
+
+ 
+R > table(usedcars$conservative)
+
+Conservative          Not 
+          99           51 
+R > head(usedcars)
+  year model price mileage  color transmission conservative
+1 2011   SEL 21992    7413 Yellow         AUTO          Not
+2 2011   SEL 20995   10926   Gray         AUTO Conservative
+3 2011   SEL 19995    7351 Silver         AUTO Conservative
+4 2011   SEL 17809   11613   Gray         AUTO Conservative
+5 2012    SE 17500    8367  White         AUTO Conservative
+6 2010   SEL 17495   25125 Silver         AUTO Conservative
+R > str(usedcars)
+'data.frame':	150 obs. of  7 variables:
+ $ year        : int  2011 2011 2011 2011 2012 2010 2011 2010 2011 2010 ...
+ $ model       : chr  "SEL" "SEL" "SEL" "SEL" ...
+ $ price       : int  21992 20995 19995 17809 17500 17495 17000 16995 16995 16995 ...
+ $ mileage     : int  7413 10926 7351 11613 8367 25125 27393 21026 32655 36116 ...
+ $ color       : chr  "Yellow" "Gray" "Silver" "Gray" ...
+ $ transmission: chr  "AUTO" "AUTO" "AUTO" "AUTO" ...
+ $ conservative: Factor w/ 2 levels "Conservative",..: 2 1 1 1 1 1 2 1 1 1 ...
+R > usedcars$conservative <- usedcars$color %in% c("Black", "Gray", "Silver", "White")
+R > head(usedcars)
+  year model price mileage  color transmission conservative
+1 2011   SEL 21992    7413 Yellow         AUTO        FALSE
+2 2011   SEL 20995   10926   Gray         AUTO         TRUE
+3 2011   SEL 19995    7351 Silver         AUTO         TRUE
+4 2011   SEL 17809   11613   Gray         AUTO         TRUE
+5 2012    SE 17500    8367  White         AUTO         TRUE
+6 2010   SEL 17495   25125 Silver         AUTO         TRUE
+R > table(usedcars$conservative)
+
+FALSE  TRUE 
+   51    99 
+R > usedcars$conservative <- factor(usedcars$color %in% c("Black", "Gray", "Silver", "White"), levels=c("TRUE", "FALSE"))
+R > head(usedcars)
+  year model price mileage  color transmission conservative
+1 2011   SEL 21992    7413 Yellow         AUTO        FALSE
+2 2011   SEL 20995   10926   Gray         AUTO         TRUE
+3 2011   SEL 19995    7351 Silver         AUTO         TRUE
+4 2011   SEL 17809   11613   Gray         AUTO         TRUE
+5 2012    SE 17500    8367  White         AUTO         TRUE
+6 2010   SEL 17495   25125 Silver         AUTO         TRUE
+R > str(usedcars)
+'data.frame':	150 obs. of  7 variables:
+ $ year        : int  2011 2011 2011 2011 2012 2010 2011 2010 2011 2010 ...
+ $ model       : chr  "SEL" "SEL" "SEL" "SEL" ...
+ $ price       : int  21992 20995 19995 17809 17500 17495 17000 16995 16995 16995 ...
+ $ mileage     : int  7413 10926 7351 11613 8367 25125 27393 21026 32655 36116 ...
+ $ color       : chr  "Yellow" "Gray" "Silver" "Gray" ...
+ $ transmission: chr  "AUTO" "AUTO" "AUTO" "AUTO" ...
+ $ conservative: Factor w/ 2 levels "TRUE","FALSE": 2 1 1 1 1 1 2 1 1 1 ...
+R > table(usedcars$conservative)
+
+ TRUE FALSE 
+   99    51 
+R > CrossTable(x=usedcars$model, y=usedcars$conservative)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  150 
+
+ 
+               | usedcars$conservative 
+usedcars$model |      TRUE |     FALSE | Row Total | 
+---------------|-----------|-----------|-----------|
+            SE |        51 |        27 |        78 | 
+               |     0.004 |     0.009 |           | 
+               |     0.654 |     0.346 |     0.520 | 
+               |     0.515 |     0.529 |           | 
+               |     0.340 |     0.180 |           | 
+---------------|-----------|-----------|-----------|
+           SEL |        16 |         7 |        23 | 
+               |     0.044 |     0.086 |           | 
+               |     0.696 |     0.304 |     0.153 | 
+               |     0.162 |     0.137 |           | 
+               |     0.107 |     0.047 |           | 
+---------------|-----------|-----------|-----------|
+           SES |        32 |        17 |        49 | 
+               |     0.004 |     0.007 |           | 
+               |     0.653 |     0.347 |     0.327 | 
+               |     0.323 |     0.333 |           | 
+               |     0.213 |     0.113 |           | 
+---------------|-----------|-----------|-----------|
+  Column Total |        99 |        51 |       150 | 
+               |     0.660 |     0.340 |           | 
+---------------|-----------|-----------|-----------|
+
+ 
+R > CrossTable(x=usedcars$model, y=usedcars$conservative, chisq=TRUE))
+에러: 예기치 않은 ')'입니다 in "CrossTable(x=usedcars$model, y=usedcars$conservative, chisq=TRUE))"
+R > CrossTable(x=usedcars$model, y=usedcars$conservative, chisq=TRUE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  150 
+
+ 
+               | usedcars$conservative 
+usedcars$model |      TRUE |     FALSE | Row Total | 
+---------------|-----------|-----------|-----------|
+            SE |        51 |        27 |        78 | 
+               |     0.004 |     0.009 |           | 
+               |     0.654 |     0.346 |     0.520 | 
+               |     0.515 |     0.529 |           | 
+               |     0.340 |     0.180 |           | 
+---------------|-----------|-----------|-----------|
+           SEL |        16 |         7 |        23 | 
+               |     0.044 |     0.086 |           | 
+               |     0.696 |     0.304 |     0.153 | 
+               |     0.162 |     0.137 |           | 
+               |     0.107 |     0.047 |           | 
+---------------|-----------|-----------|-----------|
+           SES |        32 |        17 |        49 | 
+               |     0.004 |     0.007 |           | 
+               |     0.653 |     0.347 |     0.327 | 
+               |     0.323 |     0.333 |           | 
+               |     0.213 |     0.113 |           | 
+---------------|-----------|-----------|-----------|
+  Column Total |        99 |        51 |       150 | 
+               |     0.660 |     0.340 |           | 
+---------------|-----------|-----------|-----------|
+
+ 
+Statistics for All Table Factors
+
+
+Pearson's Chi-squared test 
+------------------------------------------------------------
+Chi^2 =  0.1539564     d.f. =  2     p =  0.92591 
+
+
+ 
+R > getwd()
+[1] "/Users/coop2711/Dropbox/Works/Class/Data_Science/mlr-ko/chapter 2"
+R > setwd("../chapter 3")
+R > head(read.csv("wisc_bc_data.csv"))
+           id diagnosis radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se
+1    87139402         B      12.320        12.39          78.85     464.1         0.10280          0.06981      0.0398700    0.037000        0.1959        0.05955    0.2360
+2     8910251         B      10.600        18.95          69.28     346.4         0.09688          0.11470      0.0638700    0.026420        0.1922        0.06491    0.4505
+3      905520         B      11.040        16.83          70.92     373.2         0.10770          0.07804      0.0304600    0.024800        0.1714        0.06340    0.1967
+4      868871         B      11.280        13.39          73.00     384.8         0.11640          0.11360      0.0463500    0.047960        0.1771        0.06072    0.3384
+5     9012568         B      15.190        13.21          97.65     711.8         0.07963          0.06934      0.0339300    0.026570        0.1721        0.05544    0.1783
+6      906539         B      11.570        19.04          74.20     409.7         0.08546          0.07722      0.0548500    0.014280        0.2031        0.06267    0.2864
+    texture_se perimeter_se area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst
+1       0.6656       1.6700  17.430      0.008045       0.011800    0.0168300  0.012410    0.019240    0.0022480       13.500         15.64           86.97      549.1
+2       1.1970       3.4300  27.100      0.007470       0.035810    0.0335400  0.013650    0.035040    0.0033180       11.880         22.94           78.28      424.8
+3       1.3870       1.3420  13.540      0.005158       0.009355    0.0105600  0.007483    0.017180    0.0021980       12.410         26.44           79.93      471.4
+4       1.3430       1.8510  26.330      0.011270       0.034980    0.0218700  0.019650    0.015800    0.0034420       11.920         15.77           76.53      434.0
+5       0.4125       1.3380  17.720      0.005012       0.014850    0.0155100  0.009155    0.016470    0.0017670       16.200         15.73          104.50      819.1
+6       1.4400       2.2060  20.300      0.007278       0.020470    0.0444700  0.008799    0.018680    0.0033390       13.070         26.98           86.43      520.5
+    smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+1            0.13850           0.12660        0.124200     0.093910         0.2827         0.06771
+2            0.12130           0.25150        0.191600     0.079260         0.2940         0.07587
+3            0.13690           0.14820        0.106700     0.074310         0.2998         0.07881
+4            0.13670           0.18220        0.086690     0.086110         0.2102         0.06784
+5            0.11260           0.17370        0.136200     0.081780         0.2487         0.06766
+6            0.12490           0.19370        0.256000     0.066640         0.3035         0.08284
+R > wbcd<-read.csv("wisc_bc_data.csv")
+R > str(wbcd)
+'data.frame':	569 obs. of  32 variables:
+ $ id               : int  87139402 8910251 905520 868871 9012568 906539 925291 87880 862989 89827 ...
+ $ diagnosis        : chr  "B" "B" "B" "B" ...
+ $ radius_mean      : num  12.3 10.6 11 11.3 15.2 ...
+ $ texture_mean     : num  12.4 18.9 16.8 13.4 13.2 ...
+ $ perimeter_mean   : num  78.8 69.3 70.9 73 97.7 ...
+ $ area_mean        : num  464 346 373 385 712 ...
+ $ smoothness_mean  : num  0.1028 0.0969 0.1077 0.1164 0.0796 ...
+ $ compactness_mean : num  0.0698 0.1147 0.078 0.1136 0.0693 ...
+ $ concavity_mean   : num  0.0399 0.0639 0.0305 0.0464 0.0339 ...
+ $ points_mean      : num  0.037 0.0264 0.0248 0.048 0.0266 ...
+ $ symmetry_mean    : num  0.196 0.192 0.171 0.177 0.172 ...
+ $ dimension_mean   : num  0.0595 0.0649 0.0634 0.0607 0.0554 ...
+ $ radius_se        : num  0.236 0.451 0.197 0.338 0.178 ...
+ $ texture_se       : num  0.666 1.197 1.387 1.343 0.412 ...
+ $ perimeter_se     : num  1.67 3.43 1.34 1.85 1.34 ...
+ $ area_se          : num  17.4 27.1 13.5 26.3 17.7 ...
+ $ smoothness_se    : num  0.00805 0.00747 0.00516 0.01127 0.00501 ...
+ $ compactness_se   : num  0.0118 0.03581 0.00936 0.03498 0.01485 ...
+ $ concavity_se     : num  0.0168 0.0335 0.0106 0.0219 0.0155 ...
+ $ points_se        : num  0.01241 0.01365 0.00748 0.01965 0.00915 ...
+ $ symmetry_se      : num  0.0192 0.035 0.0172 0.0158 0.0165 ...
+ $ dimension_se     : num  0.00225 0.00332 0.0022 0.00344 0.00177 ...
+ $ radius_worst     : num  13.5 11.9 12.4 11.9 16.2 ...
+ $ texture_worst    : num  15.6 22.9 26.4 15.8 15.7 ...
+ $ perimeter_worst  : num  87 78.3 79.9 76.5 104.5 ...
+ $ area_worst       : num  549 425 471 434 819 ...
+ $ smoothness_worst : num  0.139 0.121 0.137 0.137 0.113 ...
+ $ compactness_worst: num  0.127 0.252 0.148 0.182 0.174 ...
+ $ concavity_worst  : num  0.1242 0.1916 0.1067 0.0867 0.1362 ...
+ $ points_worst     : num  0.0939 0.0793 0.0743 0.0861 0.0818 ...
+ $ symmetry_worst   : num  0.283 0.294 0.3 0.21 0.249 ...
+ $ dimension_worst  : num  0.0677 0.0759 0.0788 0.0678 0.0677 ...
+R > wbcd<-wbcd[,-1]
+R > str(wbcd)
+'data.frame':	569 obs. of  31 variables:
+ $ diagnosis        : chr  "B" "B" "B" "B" ...
+ $ radius_mean      : num  12.3 10.6 11 11.3 15.2 ...
+ $ texture_mean     : num  12.4 18.9 16.8 13.4 13.2 ...
+ $ perimeter_mean   : num  78.8 69.3 70.9 73 97.7 ...
+ $ area_mean        : num  464 346 373 385 712 ...
+ $ smoothness_mean  : num  0.1028 0.0969 0.1077 0.1164 0.0796 ...
+ $ compactness_mean : num  0.0698 0.1147 0.078 0.1136 0.0693 ...
+ $ concavity_mean   : num  0.0399 0.0639 0.0305 0.0464 0.0339 ...
+ $ points_mean      : num  0.037 0.0264 0.0248 0.048 0.0266 ...
+ $ symmetry_mean    : num  0.196 0.192 0.171 0.177 0.172 ...
+ $ dimension_mean   : num  0.0595 0.0649 0.0634 0.0607 0.0554 ...
+ $ radius_se        : num  0.236 0.451 0.197 0.338 0.178 ...
+ $ texture_se       : num  0.666 1.197 1.387 1.343 0.412 ...
+ $ perimeter_se     : num  1.67 3.43 1.34 1.85 1.34 ...
+ $ area_se          : num  17.4 27.1 13.5 26.3 17.7 ...
+ $ smoothness_se    : num  0.00805 0.00747 0.00516 0.01127 0.00501 ...
+ $ compactness_se   : num  0.0118 0.03581 0.00936 0.03498 0.01485 ...
+ $ concavity_se     : num  0.0168 0.0335 0.0106 0.0219 0.0155 ...
+ $ points_se        : num  0.01241 0.01365 0.00748 0.01965 0.00915 ...
+ $ symmetry_se      : num  0.0192 0.035 0.0172 0.0158 0.0165 ...
+ $ dimension_se     : num  0.00225 0.00332 0.0022 0.00344 0.00177 ...
+ $ radius_worst     : num  13.5 11.9 12.4 11.9 16.2 ...
+ $ texture_worst    : num  15.6 22.9 26.4 15.8 15.7 ...
+ $ perimeter_worst  : num  87 78.3 79.9 76.5 104.5 ...
+ $ area_worst       : num  549 425 471 434 819 ...
+ $ smoothness_worst : num  0.139 0.121 0.137 0.137 0.113 ...
+ $ compactness_worst: num  0.127 0.252 0.148 0.182 0.174 ...
+ $ concavity_worst  : num  0.1242 0.1916 0.1067 0.0867 0.1362 ...
+ $ points_worst     : num  0.0939 0.0793 0.0743 0.0861 0.0818 ...
+ $ symmetry_worst   : num  0.283 0.294 0.3 0.21 0.249 ...
+ $ dimension_worst  : num  0.0677 0.0759 0.0788 0.0678 0.0677 ...
+R > table(wbcd$diagnosis)
+
+  B   M 
+357 212 
+R > wbcd$diagnosis<-factor(wbcd$diagnosis, levels=c("B", "M"), labels=c("Benign", "Malignant"))
+R > round(prop.table(table(wbcd$diagnosis))*100, digits=1)
+
+   Benign Malignant 
+     62.7      37.3 
+R > normalize<-function(x){
++ return((x-min(x)) /(max(x)-min(x)))
++ }
+R > normalize
+function(x){
+return((x-min(x)) /(max(x)-min(x)))
+}
+R > str(normalize)
+function (x)  
+ - attr(*, "srcref")=Class 'srcref'  atomic [1:8] 1 12 3 1 12 1 1 3
+  .. ..- attr(*, "srcfile")=Classes 'srcfilecopy', 'srcfile' <environment: 0x7f85c8537710> 
+R > normalize(1:5)
+[1] 0.00 0.25 0.50 0.75 1.00
+R > normalize(10*1:5)
+[1] 0.00 0.25 0.50 0.75 1.00
+R > head(wbcd[2:31])
+  radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se texture_se perimeter_se
+1       12.32        12.39          78.85     464.1         0.10280          0.06981        0.03987     0.03700        0.1959        0.05955    0.2360     0.6656        1.670
+2       10.60        18.95          69.28     346.4         0.09688          0.11470        0.06387     0.02642        0.1922        0.06491    0.4505     1.1970        3.430
+3       11.04        16.83          70.92     373.2         0.10770          0.07804        0.03046     0.02480        0.1714        0.06340    0.1967     1.3870        1.342
+4       11.28        13.39          73.00     384.8         0.11640          0.11360        0.04635     0.04796        0.1771        0.06072    0.3384     1.3430        1.851
+5       15.19        13.21          97.65     711.8         0.07963          0.06934        0.03393     0.02657        0.1721        0.05544    0.1783     0.4125        1.338
+6       11.57        19.04          74.20     409.7         0.08546          0.07722        0.05485     0.01428        0.2031        0.06267    0.2864     1.4400        2.206
+  area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst smoothness_worst compactness_worst
+1   17.43      0.008045       0.011800      0.01683  0.012410     0.01924     0.002248        13.50         15.64           86.97      549.1           0.1385            0.1266
+2   27.10      0.007470       0.035810      0.03354  0.013650     0.03504     0.003318        11.88         22.94           78.28      424.8           0.1213            0.2515
+3   13.54      0.005158       0.009355      0.01056  0.007483     0.01718     0.002198        12.41         26.44           79.93      471.4           0.1369            0.1482
+4   26.33      0.011270       0.034980      0.02187  0.019650     0.01580     0.003442        11.92         15.77           76.53      434.0           0.1367            0.1822
+5   17.72      0.005012       0.014850      0.01551  0.009155     0.01647     0.001767        16.20         15.73          104.50      819.1           0.1126            0.1737
+6   20.30      0.007278       0.020470      0.04447  0.008799     0.01868     0.003339        13.07         26.98           86.43      520.5           0.1249            0.1937
+  concavity_worst points_worst symmetry_worst dimension_worst
+1         0.12420      0.09391         0.2827         0.06771
+2         0.19160      0.07926         0.2940         0.07587
+3         0.10670      0.07431         0.2998         0.07881
+4         0.08669      0.08611         0.2102         0.06784
+5         0.13620      0.08178         0.2487         0.06766
+6         0.25600      0.06664         0.3035         0.08284
+R > head(wbcd[,2:31])
+  radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se texture_se perimeter_se
+1       12.32        12.39          78.85     464.1         0.10280          0.06981        0.03987     0.03700        0.1959        0.05955    0.2360     0.6656        1.670
+2       10.60        18.95          69.28     346.4         0.09688          0.11470        0.06387     0.02642        0.1922        0.06491    0.4505     1.1970        3.430
+3       11.04        16.83          70.92     373.2         0.10770          0.07804        0.03046     0.02480        0.1714        0.06340    0.1967     1.3870        1.342
+4       11.28        13.39          73.00     384.8         0.11640          0.11360        0.04635     0.04796        0.1771        0.06072    0.3384     1.3430        1.851
+5       15.19        13.21          97.65     711.8         0.07963          0.06934        0.03393     0.02657        0.1721        0.05544    0.1783     0.4125        1.338
+6       11.57        19.04          74.20     409.7         0.08546          0.07722        0.05485     0.01428        0.2031        0.06267    0.2864     1.4400        2.206
+  area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst smoothness_worst compactness_worst
+1   17.43      0.008045       0.011800      0.01683  0.012410     0.01924     0.002248        13.50         15.64           86.97      549.1           0.1385            0.1266
+2   27.10      0.007470       0.035810      0.03354  0.013650     0.03504     0.003318        11.88         22.94           78.28      424.8           0.1213            0.2515
+3   13.54      0.005158       0.009355      0.01056  0.007483     0.01718     0.002198        12.41         26.44           79.93      471.4           0.1369            0.1482
+4   26.33      0.011270       0.034980      0.02187  0.019650     0.01580     0.003442        11.92         15.77           76.53      434.0           0.1367            0.1822
+5   17.72      0.005012       0.014850      0.01551  0.009155     0.01647     0.001767        16.20         15.73          104.50      819.1           0.1126            0.1737
+6   20.30      0.007278       0.020470      0.04447  0.008799     0.01868     0.003339        13.07         26.98           86.43      520.5           0.1249            0.1937
+  concavity_worst points_worst symmetry_worst dimension_worst
+1         0.12420      0.09391         0.2827         0.06771
+2         0.19160      0.07926         0.2940         0.07587
+3         0.10670      0.07431         0.2998         0.07881
+4         0.08669      0.08611         0.2102         0.06784
+5         0.13620      0.08178         0.2487         0.06766
+6         0.25600      0.06664         0.3035         0.08284
+R > head(mapply(normalize, wbcd[2:31]))
+       radius_mean texture_mean perimeter_mean  area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean   radius_se   texture_se
+  [1,]  0.25268588   0.09063240     0.24227766 0.13599152      0.45292047       0.15468376    0.093416120 0.183896620    0.45404040    0.201979781 0.045084193 0.0674946959
+  [2,]  0.17128118   0.31247886     0.17614539 0.08606575      0.39947639       0.29237470    0.149648547 0.131312127    0.43535354    0.314869419 0.122759370 0.1849363508
+  [3,]  0.19210564   0.24078458     0.18747841 0.09743372      0.49715627       0.17992761    0.071368322 0.123260437    0.33030303    0.283066554 0.030852797 0.2269271570
+  [4,]  0.20346443   0.12445046     0.20185198 0.10235419      0.57569739       0.28900067    0.108598875 0.238369781    0.35909091    0.226621735 0.082165490 0.2172029703
+  [5,]  0.38851815   0.11836321     0.37219266 0.24106045      0.24374831       0.15324213    0.079498594 0.132057654    0.33383838    0.115417018 0.024189752 0.0115585219
+  [6,]  0.21718964   0.31552249     0.21014443 0.11291622      0.29637989       0.17741243    0.128514527 0.070974155    0.49040404    0.267691660 0.063335144 0.2386403819
+        perimeter_se      area_se smoothness_se compactness_se concavity_se  points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst  area_worst
+  [1,] 0.0430193658 0.0198506532    0.21524969    0.071709676  0.042500000 0.23508240  0.15981877  0.046750411   0.19815012    0.09648188      0.18208078 0.089436689
+  [2,] 0.1259482637 0.0379119832    0.19570316    0.252035329  0.084696970 0.25857170  0.38214105  0.083716817   0.14051939    0.29104478      0.13880173 0.058887141
+  [3,] 0.0275644348 0.0125850302    0.11710915    0.053346652  0.026666667 0.14175033  0.13083244  0.045023009   0.15937389    0.38432836      0.14701927 0.070340149
+  [4,] 0.0515478490 0.0364738008    0.32488017    0.245801664  0.055227273 0.37222959  0.11141442  0.088000774   0.14194237    0.09994670      0.13008616 0.061148250
+  [5,] 0.0273759600 0.0203923063    0.11214604    0.094616517  0.039166667 0.17342300  0.12084201  0.030132803   0.29420135    0.09888060      0.26938593 0.155795320
+  [6,] 0.0682749847 0.0252111513    0.18917633    0.136825187  0.112297980 0.16667930  0.15193899  0.084442325   0.18285308    0.39872068      0.17939140 0.082407589
+        smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+  [1,]       0.44462788       0.096351059     0.099201278   0.32271478    0.248767987     0.083103765
+  [2,]       0.33104405       0.217529664     0.153035144   0.27237113    0.271042775     0.136626000
+  [3,]       0.43406194       0.117307487     0.085223642   0.25536082    0.282475853     0.155909747
+  [4,]       0.43274120       0.150294457     0.069241214   0.29591065    0.105854524     0.083956448
+  [5,]       0.27359176       0.142047715     0.108785942   0.28103093    0.181746501     0.082775810
+  [6,]       0.35481741       0.161451815     0.204472843   0.22900344    0.289769367     0.182342910
+ 
+R > wbcd_n<-mapply(normalize,wbcd[2:31])
+R > str(wbcd_n)
+ num [1:569, 1:30] 0.253 0.171 0.192 0.203 0.389 ...
+ - attr(*, "dimnames")=List of 2
+  ..$ : NULL
+  ..$ : chr [1:30] "radius_mean" "texture_mean" "perimeter_mean" "area_mean" ...
+R > summary(wbcd_n[2])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.1713  0.1713  0.1713  0.1713  0.1713  0.1713 
+R > summary(wbcd_n[3])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.1921  0.1921  0.1921  0.1921  0.1921  0.1921 
+R > summary(wbcd_n[,3])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2168  0.2933  0.3329  0.4168  1.0000 
+R > summary(wbcd_n[,2])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2185  0.3088  0.3240  0.4089  1.0000 
+R > wbcd_n[2,1]
+radius_mean 
+  0.1712812 
+R > wbcd_n<-as.data.frame(mapply(normalize,wbcd[2:31]))
+R > str(wbcd_n)
+'data.frame':	569 obs. of  30 variables:
+ $ radius_mean      : num  0.253 0.171 0.192 0.203 0.389 ...
+ $ texture_mean     : num  0.0906 0.3125 0.2408 0.1245 0.1184 ...
+ $ perimeter_mean   : num  0.242 0.176 0.187 0.202 0.372 ...
+ $ area_mean        : num  0.136 0.0861 0.0974 0.1024 0.2411 ...
+ $ smoothness_mean  : num  0.453 0.399 0.497 0.576 0.244 ...
+ $ compactness_mean : num  0.155 0.292 0.18 0.289 0.153 ...
+ $ concavity_mean   : num  0.0934 0.1496 0.0714 0.1086 0.0795 ...
+ $ points_mean      : num  0.184 0.131 0.123 0.238 0.132 ...
+ $ symmetry_mean    : num  0.454 0.435 0.33 0.359 0.334 ...
+ $ dimension_mean   : num  0.202 0.315 0.283 0.227 0.115 ...
+ $ radius_se        : num  0.0451 0.1228 0.0309 0.0822 0.0242 ...
+ $ texture_se       : num  0.0675 0.1849 0.2269 0.2172 0.0116 ...
+ $ perimeter_se     : num  0.043 0.1259 0.0276 0.0515 0.0274 ...
+ $ area_se          : num  0.0199 0.0379 0.0126 0.0365 0.0204 ...
+ $ smoothness_se    : num  0.215 0.196 0.117 0.325 0.112 ...
+ $ compactness_se   : num  0.0717 0.252 0.0533 0.2458 0.0946 ...
+ $ concavity_se     : num  0.0425 0.0847 0.0267 0.0552 0.0392 ...
+ $ points_se        : num  0.235 0.259 0.142 0.372 0.173 ...
+ $ symmetry_se      : num  0.16 0.382 0.131 0.111 0.121 ...
+ $ dimension_se     : num  0.0468 0.0837 0.045 0.088 0.0301 ...
+ $ radius_worst     : num  0.198 0.141 0.159 0.142 0.294 ...
+ $ texture_worst    : num  0.0965 0.291 0.3843 0.0999 0.0989 ...
+ $ perimeter_worst  : num  0.182 0.139 0.147 0.13 0.269 ...
+ $ area_worst       : num  0.0894 0.0589 0.0703 0.0611 0.1558 ...
+ $ smoothness_worst : num  0.445 0.331 0.434 0.433 0.274 ...
+ $ compactness_worst: num  0.0964 0.2175 0.1173 0.1503 0.142 ...
+ $ concavity_worst  : num  0.0992 0.153 0.0852 0.0692 0.1088 ...
+ $ points_worst     : num  0.323 0.272 0.255 0.296 0.281 ...
+ $ symmetry_worst   : num  0.249 0.271 0.282 0.106 0.182 ...
+ $ dimension_worst  : num  0.0831 0.1366 0.1559 0.084 0.0828 ...
+R > head(wbcd[2])
+    radius_mean
+1        12.320
+2        10.600
+3        11.040
+4        11.280
+5        15.190
+6        11.570
+R > head(wbcd_n[2])
+    texture_mean
+1     0.09063240
+2     0.31247886
+3     0.24078458
+4     0.12445046
+5     0.11836321
+6     0.31552249
+R > summary(wbcd_n[2])
+  texture_mean   
+ Min.   :0.0000  
+ 1st Qu.:0.2185  
+ Median :0.3088  
+ Mean   :0.3240  
+ 3rd Qu.:0.4089  
+ Max.   :1.0000  
+R > summary(wbcd_n$area_mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.1174  0.1729  0.2169  0.2711  1.0000 
+R > sapply(wbcd_n[1:30], summary)
+        radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se texture_se
+Min.         0.0000       0.0000         0.0000    0.0000          0.0000           0.0000        0.00000      0.0000        0.0000         0.0000   0.00000     0.0000
+1st Qu.      0.2233       0.2185         0.2168    0.1174          0.3046           0.1397        0.06926      0.1009        0.2823         0.1630   0.04378     0.1047
+Median       0.3024       0.3088         0.2933    0.1729          0.3904           0.2247        0.14420      0.1665        0.3697         0.2439   0.07702     0.1653
+Mean         0.3382       0.3240         0.3329    0.2169          0.3948           0.2606        0.20810      0.2431        0.3796         0.2704   0.10630     0.1893
+3rd Qu.      0.4164       0.4089         0.4168    0.2711          0.4755           0.3405        0.30620      0.3678        0.4530         0.3404   0.13300     0.2462
+Max.         1.0000       1.0000         1.0000    1.0000          1.0000           1.0000        1.00000      1.0000        1.0000         1.0000   1.00000     1.0000
+        perimeter_se area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst smoothness_worst
+Min.         0.00000 0.00000        0.0000        0.00000      0.00000    0.0000      0.0000      0.00000       0.0000        0.0000          0.0000    0.00000           0.0000
+1st Qu.      0.04000 0.02064        0.1175        0.08132      0.03811    0.1447      0.1024      0.04675       0.1807        0.2415          0.1678    0.08113           0.3000
+Median       0.07209 0.03311        0.1586        0.13670      0.06538    0.2070      0.1526      0.07919       0.2504        0.3569          0.2353    0.12320           0.3971
+Mean         0.09938 0.06264        0.1811        0.17440      0.08054    0.2235      0.1781      0.10020       0.2967        0.3640          0.2831    0.17090           0.4041
+3rd Qu.      0.12250 0.07170        0.2187        0.22680      0.10620    0.2787      0.2195      0.12660       0.3863        0.4717          0.3735    0.22090           0.4942
+Max.         1.00000 1.00000        1.0000        1.00000      1.00000    1.0000      1.0000      1.00000       1.0000        1.0000          1.0000    1.00000           1.0000
+        compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+Min.               0.0000         0.00000       0.0000         0.0000          0.0000
+1st Qu.            0.1163         0.09145       0.2231         0.1851          0.1077
+Median             0.1791         0.18110       0.3434         0.2478          0.1640
+Mean               0.2202         0.21740       0.3938         0.2633          0.1896
+3rd Qu.            0.3025         0.30580       0.5546         0.3182          0.2429
+Max.               1.0000         1.00000       1.0000         1.0000          1.0000
+R > wbcd_train<-wbcd_n[1:469,]
+R > wbcd_test<-wbcd_n[470:569,]
+R > wbcd_train_labels<-wbcd[1:469, 1]
+R > wbcd_test_labels<-wbcd[470:569, 1]
+R > str(wbcd)
+'data.frame':	569 obs. of  31 variables:
+ $ diagnosis        : Factor w/ 2 levels "Benign","Malignant": 1 1 1 1 1 1 1 2 1 1 ...
+ $ radius_mean      : num  12.3 10.6 11 11.3 15.2 ...
+ $ texture_mean     : num  12.4 18.9 16.8 13.4 13.2 ...
+ $ perimeter_mean   : num  78.8 69.3 70.9 73 97.7 ...
+ $ area_mean        : num  464 346 373 385 712 ...
+ $ smoothness_mean  : num  0.1028 0.0969 0.1077 0.1164 0.0796 ...
+ $ compactness_mean : num  0.0698 0.1147 0.078 0.1136 0.0693 ...
+ $ concavity_mean   : num  0.0399 0.0639 0.0305 0.0464 0.0339 ...
+ $ points_mean      : num  0.037 0.0264 0.0248 0.048 0.0266 ...
+ $ symmetry_mean    : num  0.196 0.192 0.171 0.177 0.172 ...
+ $ dimension_mean   : num  0.0595 0.0649 0.0634 0.0607 0.0554 ...
+ $ radius_se        : num  0.236 0.451 0.197 0.338 0.178 ...
+ $ texture_se       : num  0.666 1.197 1.387 1.343 0.412 ...
+ $ perimeter_se     : num  1.67 3.43 1.34 1.85 1.34 ...
+ $ area_se          : num  17.4 27.1 13.5 26.3 17.7 ...
+ $ smoothness_se    : num  0.00805 0.00747 0.00516 0.01127 0.00501 ...
+ $ compactness_se   : num  0.0118 0.03581 0.00936 0.03498 0.01485 ...
+ $ concavity_se     : num  0.0168 0.0335 0.0106 0.0219 0.0155 ...
+ $ points_se        : num  0.01241 0.01365 0.00748 0.01965 0.00915 ...
+ $ symmetry_se      : num  0.0192 0.035 0.0172 0.0158 0.0165 ...
+ $ dimension_se     : num  0.00225 0.00332 0.0022 0.00344 0.00177 ...
+ $ radius_worst     : num  13.5 11.9 12.4 11.9 16.2 ...
+ $ texture_worst    : num  15.6 22.9 26.4 15.8 15.7 ...
+ $ perimeter_worst  : num  87 78.3 79.9 76.5 104.5 ...
+ $ area_worst       : num  549 425 471 434 819 ...
+ $ smoothness_worst : num  0.139 0.121 0.137 0.137 0.113 ...
+ $ compactness_worst: num  0.127 0.252 0.148 0.182 0.174 ...
+ $ concavity_worst  : num  0.1242 0.1916 0.1067 0.0867 0.1362 ...
+ $ points_worst     : num  0.0939 0.0793 0.0743 0.0861 0.0818 ...
+ $ symmetry_worst   : num  0.283 0.294 0.3 0.21 0.249 ...
+ $ dimension_worst  : num  0.0677 0.0759 0.0788 0.0678 0.0677 ...
+R > str(wbcd_n)
+'data.frame':	569 obs. of  30 variables:
+ $ radius_mean      : num  0.253 0.171 0.192 0.203 0.389 ...
+ $ texture_mean     : num  0.0906 0.3125 0.2408 0.1245 0.1184 ...
+ $ perimeter_mean   : num  0.242 0.176 0.187 0.202 0.372 ...
+ $ area_mean        : num  0.136 0.0861 0.0974 0.1024 0.2411 ...
+ $ smoothness_mean  : num  0.453 0.399 0.497 0.576 0.244 ...
+ $ compactness_mean : num  0.155 0.292 0.18 0.289 0.153 ...
+ $ concavity_mean   : num  0.0934 0.1496 0.0714 0.1086 0.0795 ...
+ $ points_mean      : num  0.184 0.131 0.123 0.238 0.132 ...
+ $ symmetry_mean    : num  0.454 0.435 0.33 0.359 0.334 ...
+ $ dimension_mean   : num  0.202 0.315 0.283 0.227 0.115 ...
+ $ radius_se        : num  0.0451 0.1228 0.0309 0.0822 0.0242 ...
+ $ texture_se       : num  0.0675 0.1849 0.2269 0.2172 0.0116 ...
+ $ perimeter_se     : num  0.043 0.1259 0.0276 0.0515 0.0274 ...
+ $ area_se          : num  0.0199 0.0379 0.0126 0.0365 0.0204 ...
+ $ smoothness_se    : num  0.215 0.196 0.117 0.325 0.112 ...
+ $ compactness_se   : num  0.0717 0.252 0.0533 0.2458 0.0946 ...
+ $ concavity_se     : num  0.0425 0.0847 0.0267 0.0552 0.0392 ...
+ $ points_se        : num  0.235 0.259 0.142 0.372 0.173 ...
+ $ symmetry_se      : num  0.16 0.382 0.131 0.111 0.121 ...
+ $ dimension_se     : num  0.0468 0.0837 0.045 0.088 0.0301 ...
+ $ radius_worst     : num  0.198 0.141 0.159 0.142 0.294 ...
+ $ texture_worst    : num  0.0965 0.291 0.3843 0.0999 0.0989 ...
+ $ perimeter_worst  : num  0.182 0.139 0.147 0.13 0.269 ...
+ $ area_worst       : num  0.0894 0.0589 0.0703 0.0611 0.1558 ...
+ $ smoothness_worst : num  0.445 0.331 0.434 0.433 0.274 ...
+ $ compactness_worst: num  0.0964 0.2175 0.1173 0.1503 0.142 ...
+ $ concavity_worst  : num  0.0992 0.153 0.0852 0.0692 0.1088 ...
+ $ points_worst     : num  0.323 0.272 0.255 0.296 0.281 ...
+ $ symmetry_worst   : num  0.249 0.271 0.282 0.106 0.182 ...
+ $ dimension_worst  : num  0.0831 0.1366 0.1559 0.084 0.0828 ...
+R > search()
+ [1] ".GlobalEnv"        "package:gmodels"   "package:ggplot2"   "package:RWeka"     "package:psych"     "package:stats"     "package:graphics"  "package:grDevices"
+ [9] "package:utils"     "package:datasets"  "KoreaEnv"          "package:methods"   "Autoloads"         "package:base"     
+R > install.packages("class",repos="http://cran.csiro.au")
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/class_7.3-13.tgz'을 시도합니다
+Content type 'application/x-gzip' length 86397 bytes (84 KB)
+==================================================
+downloaded 84 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+R > library(class)
+R > ?knn
+R > help(package="class")
+R > wbcd_test_pred<-knn(train=wbcd_train, test=wbcd_test, cl=wbcd_train_labels, k=21)
+R > head(wbcd_test_pred)
+[1] Benign    Benign    Benign    Benign    Malignant Benign   
+Levels: Benign Malignant
+R > head(data.frame(wbcd_test_pred, wbcd[470:569,]))
+    wbcd_test_pred diagnosis radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se
+470         Benign    Benign       14.04        15.98          89.78     611.2         0.08458          0.05895        0.03534     0.02944        0.1714        0.05898    0.3892
+471         Benign    Benign       12.77        21.41          82.02     507.4         0.08749          0.06601        0.03112     0.02864        0.1694        0.06287    0.7311
+472         Benign    Benign       14.97        19.76          95.50     690.2         0.08421          0.05352        0.01947     0.01939        0.1515        0.05266    0.1840
+473         Benign    Benign       13.03        18.42          82.61     523.8         0.08983          0.03766        0.02562     0.02923        0.1467        0.05863    0.1839
+474      Malignant Malignant       19.53        32.47         128.00    1223.0         0.08420          0.11300        0.11450     0.06637        0.1428        0.05313    0.7392
+475         Benign    Benign       12.04        28.14          76.85     449.9         0.08752          0.06000        0.02367     0.02377        0.1854        0.05698    0.6061
+    texture_se perimeter_se area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst
+470      1.046        2.644   32.74      0.007976       0.012950     0.016080  0.009046     0.02005     0.002830        15.66         21.58          101.20      750.0
+471      1.748        5.118   53.65      0.004571       0.017900     0.021760  0.017570     0.03373     0.005875        13.75         23.50           89.04      579.5
+472      1.065        1.286   16.64      0.003634       0.007983     0.008268  0.006432     0.01924     0.001520        15.98         25.82          102.30      782.1
+473      2.342        1.170   14.16      0.004352       0.004899     0.013430  0.011640     0.02671     0.001777        13.30         22.81           84.46      545.9
+474      1.321        4.722  109.90      0.005539       0.026440     0.026640  0.010780     0.01332     0.002256        27.90         45.41          180.20     2477.0
+475      2.643        4.099   44.96      0.007517       0.015550     0.014650  0.011830     0.02047     0.003883        13.60         33.33           87.24      567.6
+    smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+470          0.11950           0.12520         0.11170      0.07453         0.2725         0.07234
+471          0.09388           0.08978         0.05186      0.04773         0.2179         0.06871
+472          0.10450           0.09995         0.07750      0.05754         0.2646         0.06085
+473          0.09701           0.04619         0.04833      0.05013         0.1987         0.06169
+474          0.14080           0.40970         0.39950      0.16250         0.2713         0.07568
+475          0.10410           0.09726         0.05524      0.05547         0.2404         0.06639
+R > data.frame(wbcd_test_pred, wbcd[470:569,1])
+    wbcd_test_pred wbcd.470.569..1.
+1           Benign           Benign
+2           Benign           Benign
+3           Benign           Benign
+4           Benign           Benign
+5        Malignant        Malignant
+6           Benign           Benign
+7        Malignant        Malignant
+8           Benign           Benign
+9        Malignant        Malignant
+10          Benign           Benign
+11       Malignant        Malignant
+12          Benign           Benign
+13       Malignant        Malignant
+14       Malignant        Malignant
+15          Benign           Benign
+16          Benign           Benign
+17       Malignant        Malignant
+18          Benign           Benign
+19       Malignant        Malignant
+20          Benign           Benign
+21       Malignant        Malignant
+22       Malignant        Malignant
+23       Malignant        Malignant
+24       Malignant        Malignant
+25          Benign           Benign
+26          Benign           Benign
+27          Benign           Benign
+28          Benign           Benign
+29       Malignant        Malignant
+30       Malignant        Malignant
+31       Malignant        Malignant
+32          Benign        Malignant
+33       Malignant        Malignant
+34       Malignant        Malignant
+35          Benign           Benign
+36          Benign           Benign
+37          Benign           Benign
+38          Benign           Benign
+39          Benign           Benign
+40       Malignant        Malignant
+41       Malignant        Malignant
+42          Benign           Benign
+43       Malignant        Malignant
+44       Malignant        Malignant
+45          Benign           Benign
+46       Malignant        Malignant
+47       Malignant        Malignant
+48       Malignant        Malignant
+49       Malignant        Malignant
+50       Malignant        Malignant
+51          Benign           Benign
+52          Benign           Benign
+53          Benign           Benign
+54          Benign        Malignant
+55          Benign           Benign
+56          Benign           Benign
+57          Benign           Benign
+58          Benign           Benign
+59       Malignant        Malignant
+60          Benign           Benign
+61          Benign           Benign
+62          Benign           Benign
+63          Benign           Benign
+64          Benign           Benign
+65       Malignant        Malignant
+66       Malignant        Malignant
+67          Benign           Benign
+68          Benign           Benign
+69          Benign           Benign
+70          Benign           Benign
+71          Benign           Benign
+72       Malignant        Malignant
+73          Benign           Benign
+74          Benign           Benign
+75       Malignant        Malignant
+76       Malignant        Malignant
+77          Benign           Benign
+78          Benign           Benign
+79          Benign           Benign
+80          Benign           Benign
+81          Benign           Benign
+82          Benign           Benign
+83          Benign           Benign
+84       Malignant        Malignant
+85          Benign           Benign
+86          Benign           Benign
+87       Malignant        Malignant
+88          Benign           Benign
+89          Benign           Benign
+90          Benign           Benign
+91          Benign           Benign
+92       Malignant        Malignant
+93          Benign           Benign
+94          Benign           Benign
+95          Benign           Benign
+96          Benign           Benign
+97          Benign           Benign
+98       Malignant        Malignant
+99          Benign           Benign
+100      Malignant        Malignant
+R > CrossTable(wbcd_test_labels, wbcd_test_pred, prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |    Benign | Malignant | Row Total | 
+-----------------|-----------|-----------|-----------|
+          Benign |        61 |         0 |        61 | 
+                 |     1.000 |     0.000 |     0.610 | 
+                 |     0.968 |     0.000 |           | 
+                 |     0.610 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+       Malignant |         2 |        37 |        39 | 
+                 |     0.051 |     0.949 |     0.390 | 
+                 |     0.032 |     1.000 |           | 
+                 |     0.020 |     0.370 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        63 |        37 |       100 | 
+                 |     0.630 |     0.370 |           | 
+-----------------|-----------|-----------|-----------|
+
+ 
+R > wbcd_n<-as.data.frame(mapply(scale, wbcd[-1]))
+R > sapply(wbcd_n, summary)
+        radius_mean texture_mean perimeter_mean  area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean  radius_se texture_se
+Min.     -2.028e+00   -2.227e+00     -1.983e+00 -1.453e+00      -3.109e+00       -1.609e+00     -1.114e+00  -1.261e+00    -2.742e+00     -1.818e+00 -1.059e+00 -1.553e+00
+1st Qu.  -6.888e-01   -7.253e-01     -6.913e-01 -6.666e-01      -7.103e-01       -7.464e-01     -7.431e-01  -7.373e-01    -7.026e-01     -7.220e-01 -6.230e-01 -6.942e-01
+Median   -2.149e-01   -1.045e-01     -2.358e-01 -2.949e-01      -3.486e-02       -2.217e-01     -3.419e-01  -3.974e-01    -7.156e-02     -1.781e-01 -2.920e-01 -1.973e-01
+Mean     -1.383e-16    6.155e-17     -1.193e-16  1.219e-16       1.620e-16       -7.609e-17      3.876e-17  -5.275e-17     1.686e-16      4.812e-16  3.701e-17 -1.065e-16
+3rd Qu.   4.690e-01    5.837e-01      4.992e-01  3.632e-01       6.356e-01        4.934e-01      5.256e-01   6.464e-01     5.303e-01      4.706e-01  2.659e-01  4.661e-01
+Max.      3.968e+00    4.648e+00      3.973e+00  5.246e+00       4.767e+00        4.564e+00      4.240e+00   3.924e+00     4.481e+00      4.907e+00  8.899e+00  6.649e+00
+        perimeter_se    area_se smoothness_se compactness_se concavity_se  points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst
+Min.      -1.043e+00 -7.372e-01    -1.775e+00     -1.297e+00   -1.057e+00 -1.912e+00  -1.532e+00   -1.096e+00   -1.725e+00    -2.222e+00      -1.692e+00 -1.221e+00
+1st Qu.   -6.232e-01 -4.943e-01    -6.235e-01     -6.923e-01   -5.567e-01 -6.739e-01  -6.511e-01   -5.846e-01   -6.743e-01    -7.480e-01      -6.890e-01 -6.416e-01
+Median    -2.864e-01 -3.475e-01    -2.201e-01     -2.808e-01   -1.989e-01 -1.404e-01  -2.192e-01   -2.297e-01   -2.688e-01    -4.348e-02      -2.857e-01 -3.409e-01
+Mean       1.075e-16  2.887e-17     1.291e-16     -1.654e-17   -5.954e-17  7.546e-18   9.115e-17    1.590e-18   -8.473e-17     8.958e-18       5.610e-17  6.756e-18
+3rd Qu.    2.428e-01  1.067e-01     3.680e-01      3.893e-01    3.365e-01  4.722e-01   3.554e-01    2.884e-01    5.216e-01     6.578e-01       5.398e-01  3.573e-01
+Max.       9.454e+00  1.103e+01     8.023e+00      6.138e+00    1.206e+01  6.644e+00   7.066e+00    9.843e+00    4.091e+00     3.882e+00       4.284e+00  5.925e+00
+        smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+Min.          -2.680e+00        -1.443e+00      -1.305e+00   -1.744e+00     -2.159e+00      -1.600e+00
+1st Qu.       -6.906e-01        -6.805e-01      -7.558e-01   -7.557e-01     -6.413e-01      -6.913e-01
+Median        -4.680e-02        -2.693e-01      -2.180e-01   -2.233e-01     -1.273e-01      -2.163e-01
+Mean          -2.264e-16         1.185e-17       9.135e-17    1.142e-17      2.752e-16       2.005e-16
+3rd Qu.        5.970e-01         5.392e-01       5.307e-01    7.119e-01      4.497e-01       4.504e-01
+Max.           3.952e+00         5.108e+00       4.697e+00    2.684e+00      6.041e+00       6.841e+00
+R > sapply(wbcd_n, function(x){c(mean(x), sd(x))})
+       radius_mean texture_mean perimeter_mean    area_mean smoothness_mean compactness_mean concavity_mean   points_mean symmetry_mean dimension_mean    radius_se    texture_se
+[1,] -1.382847e-16 6.154753e-17   -1.19295e-16 1.219424e-16    1.620339e-16     -7.60928e-17   3.875994e-17 -5.275091e-17   1.68635e-16   4.812043e-16 3.701324e-17 -1.065481e-16
+[2,]  1.000000e+00 1.000000e+00    1.00000e+00 1.000000e+00    1.000000e+00      1.00000e+00   1.000000e+00  1.000000e+00   1.00000e+00   1.000000e+00 1.000000e+00  1.000000e+00
+     perimeter_se      area_se smoothness_se compactness_se concavity_se    points_se  symmetry_se dimension_se  radius_worst texture_worst perimeter_worst  area_worst
+[1,] 1.074966e-16 2.886821e-17  1.290812e-16  -1.653868e-17 -5.95385e-17 7.546352e-18 9.114825e-17 1.589814e-18 -8.472764e-17   8.95753e-18     5.61047e-17 6.75578e-18
+[2,] 1.000000e+00 1.000000e+00  1.000000e+00   1.000000e+00  1.00000e+00 1.000000e+00 1.000000e+00 1.000000e+00  1.000000e+00   1.00000e+00     1.00000e+00 1.00000e+00
+     smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+[1,]    -2.263707e-16      1.185486e-17    9.134851e-17 1.142223e-17   2.751544e-16    2.005397e-16
+[2,]     1.000000e+00      1.000000e+00    1.000000e+00 1.000000e+00   1.000000e+00    1.000000e+00
+R > sapply(wbcd_n, function(x){c(mean=mean(x), sd=sd(x))})
+       radius_mean texture_mean perimeter_mean    area_mean smoothness_mean compactness_mean concavity_mean   points_mean symmetry_mean dimension_mean    radius_se    texture_se
+mean -1.382847e-16 6.154753e-17   -1.19295e-16 1.219424e-16    1.620339e-16     -7.60928e-17   3.875994e-17 -5.275091e-17   1.68635e-16   4.812043e-16 3.701324e-17 -1.065481e-16
+sd    1.000000e+00 1.000000e+00    1.00000e+00 1.000000e+00    1.000000e+00      1.00000e+00   1.000000e+00  1.000000e+00   1.00000e+00   1.000000e+00 1.000000e+00  1.000000e+00
+     perimeter_se      area_se smoothness_se compactness_se concavity_se    points_se  symmetry_se dimension_se  radius_worst texture_worst perimeter_worst  area_worst
+mean 1.074966e-16 2.886821e-17  1.290812e-16  -1.653868e-17 -5.95385e-17 7.546352e-18 9.114825e-17 1.589814e-18 -8.472764e-17   8.95753e-18     5.61047e-17 6.75578e-18
+sd   1.000000e+00 1.000000e+00  1.000000e+00   1.000000e+00  1.00000e+00 1.000000e+00 1.000000e+00 1.000000e+00  1.000000e+00   1.00000e+00     1.00000e+00 1.00000e+00
+     smoothness_worst compactness_worst concavity_worst points_worst symmetry_worst dimension_worst
+mean    -2.263707e-16      1.185486e-17    9.134851e-17 1.142223e-17   2.751544e-16    2.005397e-16
+sd       1.000000e+00      1.000000e+00    1.000000e+00 1.000000e+00   1.000000e+00    1.000000e+00
+R > sapply(wbcd_n, function(x){c(mean=round(mean(x), digits=2), sd=round(sd(x), digits=2))})
+     radius_mean texture_mean perimeter_mean area_mean smoothness_mean compactness_mean concavity_mean points_mean symmetry_mean dimension_mean radius_se texture_se perimeter_se
+mean           0            0              0         0               0                0              0           0             0              0         0          0            0
+sd             1            1              1         1               1                1              1           1             1              1         1          1            1
+     area_se smoothness_se compactness_se concavity_se points_se symmetry_se dimension_se radius_worst texture_worst perimeter_worst area_worst smoothness_worst compactness_worst
+mean       0             0              0            0         0           0            0            0             0               0          0                0                 0
+sd         1             1              1            1         1           1            1            1             1               1          1                1                 1
+     concavity_worst points_worst symmetry_worst dimension_worst
+mean               0            0              0               0
+sd                 1            1              1               1
+R > wbcd_test<-wbcd_n[470:569,]
+R > wbcd_train<-wbcd_n[1:469,]
+R > wbcd_test_pred<-knn(train=wbcd_train, test=wbcd_test, cl=wbcd_train_labels, k=21)
+R > CrossTable(wbcd_test_labels, wbcd_test_pred, prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |    Benign | Malignant | Row Total | 
+-----------------|-----------|-----------|-----------|
+          Benign |        61 |         0 |        61 | 
+                 |     1.000 |     0.000 |     0.610 | 
+                 |     0.924 |     0.000 |           | 
+                 |     0.610 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+       Malignant |         5 |        34 |        39 | 
+                 |     0.128 |     0.872 |     0.390 | 
+                 |     0.076 |     1.000 |           | 
+                 |     0.050 |     0.340 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        66 |        34 |       100 | 
+                 |     0.660 |     0.340 |           | 
+-----------------|-----------|-----------|-----------|
+
+ 
+R > install.packages("tm", repos="http://cran.csiro.au")
+also installing the dependency ‘NLP’
+
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/NLP_0.1-8.tgz'을 시도합니다
+Content type 'application/x-gzip' length 275184 bytes (268 KB)
+==================================================
+downloaded 268 KB
+
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/tm_0.6-2.tgz'을 시도합니다
+Content type 'application/x-gzip' length 660405 bytes (644 KB)
+==================================================
+downloaded 644 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+
+R > CrossTable(x=wbcd_test_labels, y=wbcd_test_pred, prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |    Benign | Malignant | Row Total | 
+-----------------|-----------|-----------|-----------|
+          Benign |        61 |         0 |        61 | 
+                 |     1.000 |     0.000 |     0.610 | 
+                 |     0.924 |     0.000 |           | 
+                 |     0.610 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+       Malignant |         5 |        34 |        39 | 
+                 |     0.128 |     0.872 |     0.390 | 
+                 |     0.076 |     1.000 |           | 
+                 |     0.050 |     0.340 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        66 |        34 |       100 | 
+                 |     0.660 |     0.340 |           | 
+-----------------|-----------|-----------|-----------|
+
+ 
+R > ?CrossTable
+R > head(read.csv("../chapter 5/credit.csv"))
+     checking_balance months_loan_duration credit_history              purpose amount savings_balance employment_duration percent_of_income years_at_residence age other_credit
+1              < 0 DM                    6       critical furniture/appliances   1169         unknown           > 7 years                 4                  4  67         none
+2          1 - 200 DM                   48           good furniture/appliances   5951        < 100 DM         1 - 4 years                 2                  2  22         none
+3             unknown                   12       critical            education   2096        < 100 DM         4 - 7 years                 2                  3  49         none
+4              < 0 DM                   42           good furniture/appliances   7882        < 100 DM         4 - 7 years                 2                  4  45         none
+5              < 0 DM                   24           poor                  car   4870        < 100 DM         1 - 4 years                 3                  4  53         none
+6             unknown                   36           good            education   9055         unknown         1 - 4 years                 2                  4  35         none
+     housing existing_loans_count        job dependents phone default
+1        own                    2    skilled          1   yes      no
+2        own                    1    skilled          1    no     yes
+3        own                    1  unskilled          2    no      no
+4      other                    1    skilled          2    no      no
+5      other                    2    skilled          2    no     yes
+6      other                    1  unskilled          2   yes      no
+R > credit<-read.csv("../chapter 5/credit.csv")
+R > str(credit)
+'data.frame':	1000 obs. of  17 variables:
+ $ checking_balance    : chr  "< 0 DM" "1 - 200 DM" "unknown" "< 0 DM" ...
+ $ months_loan_duration: int  6 48 12 42 24 36 24 36 12 30 ...
+ $ credit_history      : chr  "critical" "good" "critical" "good" ...
+ $ purpose             : chr  "furniture/appliances" "furniture/appliances" "education" "furniture/appliances" ...
+ $ amount              : int  1169 5951 2096 7882 4870 9055 2835 6948 3059 5234 ...
+ $ savings_balance     : chr  "unknown" "< 100 DM" "< 100 DM" "< 100 DM" ...
+ $ employment_duration : chr  "> 7 years" "1 - 4 years" "4 - 7 years" "4 - 7 years" ...
+ $ percent_of_income   : int  4 2 2 2 3 2 3 2 2 4 ...
+ $ years_at_residence  : int  4 2 3 4 4 4 4 2 4 2 ...
+ $ age                 : int  67 22 49 45 53 35 53 35 61 28 ...
+ $ other_credit        : chr  "none" "none" "none" "none" ...
+ $ housing             : chr  "own" "own" "own" "other" ...
+ $ existing_loans_count: int  2 1 1 1 2 1 1 1 1 2 ...
+ $ job                 : chr  "skilled" "skilled" "unskilled" "skilled" ...
+ $ dependents          : int  1 1 2 2 2 2 1 1 1 1 ...
+ $ phone               : chr  "yes" "no" "no" "no" ...
+ $ default             : chr  "no" "yes" "no" "no" ...
+R > credit<-read.csv("../chapter 5/credit.csv", stringsAsFactors=TRUE)
+R > str(credit)
+'data.frame':	1000 obs. of  17 variables:
+ $ checking_balance    : Factor w/ 4 levels "< 0 DM","> 200 DM",..: 1 3 4 1 1 4 4 3 4 3 ...
+ $ months_loan_duration: int  6 48 12 42 24 36 24 36 12 30 ...
+ $ credit_history      : Factor w/ 5 levels "critical","good",..: 1 2 1 2 4 2 2 2 2 1 ...
+ $ purpose             : Factor w/ 6 levels "business","car",..: 5 5 4 5 2 4 5 2 5 2 ...
+ $ amount              : int  1169 5951 2096 7882 4870 9055 2835 6948 3059 5234 ...
+ $ savings_balance     : Factor w/ 5 levels "< 100 DM","> 1000 DM",..: 5 1 1 1 1 5 4 1 2 1 ...
+ $ employment_duration : Factor w/ 5 levels "< 1 year","> 7 years",..: 2 3 4 4 3 3 2 3 4 5 ...
+ $ percent_of_income   : int  4 2 2 2 3 2 3 2 2 4 ...
+ $ years_at_residence  : int  4 2 3 4 4 4 4 2 4 2 ...
+ $ age                 : int  67 22 49 45 53 35 53 35 61 28 ...
+ $ other_credit        : Factor w/ 3 levels "bank","none",..: 2 2 2 2 2 2 2 2 2 2 ...
+ $ housing             : Factor w/ 3 levels "other","own",..: 2 2 2 1 1 1 2 3 2 2 ...
+ $ existing_loans_count: int  2 1 1 1 2 1 1 1 1 2 ...
+ $ job                 : Factor w/ 4 levels "management","skilled",..: 2 2 4 2 2 4 2 1 4 1 ...
+ $ dependents          : int  1 1 2 2 2 2 1 1 1 1 ...
+ $ phone               : Factor w/ 2 levels "no","yes": 2 1 1 1 1 2 1 2 1 1 ...
+ $ default             : Factor w/ 2 levels "no","yes": 1 2 1 1 2 1 1 1 1 2 ...
+R > table(credit$checking_balance)
+
+    < 0 DM   > 200 DM 1 - 200 DM    unknown 
+       274         63        269        394 
+R > table(credit$savings_balance)
+
+     < 100 DM     > 1000 DM  100 - 500 DM 500 - 1000 DM       unknown 
+          603            48           103            63           183 
+R > table(credit$default)
+
+ no yes 
+700 300 
+R > summary(credit$months_loan_duration)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    4.0    12.0    18.0    20.9    24.0    72.0 
+R > summary(credit$amount)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    250    1366    2320    3271    3972   18420 
+R > sample(1:1000)
+   [1]  251  150  817  725  558  131  271  495  255  438  904   28  330  909  584  767  886  639  804  611  802  311  396  812  302  102   53  531   90  512  978  966   62  644
+  [35]  473  314  369  893  749  191  177  874  715  577  388  726  756  634  343  682  413  108  294  883  277  598  312  680  318  957  542  124  700   36  811  998  566  548
+  [69]  454  743  306  649  590  836  552  310  345  503  745   68   84  744  785  625  660  737  481  482  568  401  471  855  444  956  608  307  719  522  610  292  949  873
+ [103]  698  569  143  488  236   34  399   69  246  334  527  136  809  985  562    6  371  971  203  378  895  175  535  272  630    1  180  379  775 1000   86  847  662  967
+ [137]  274  948  319  559  409  455  157  222  697  153  466  250  313  435  538   85  439  508  122  173  738  355  980  718  468  204  813  657  988  457  668  400  353  138
+ [171]  463  832   64  735  952  152  315  125  405  557  268  327   43  858  223  316  287  205  402  192  361  128  674  301  423  742  506  764  594  659  768   79  927  171
+ [205]  491  101  337  840  121   46  267  632  139  515  416  944   80  288  824  710  622  266  653  586   87  670  664  199  352  458  197  937  275  450  381  135   10  113
+ [239]  691  393  154  541  235   78  534   38  109  389  430  529  499  231  263  794  839  671  724  818  867  994  276  970   72   44  637  426  986  434  661  442  148  969
+ [273]  368  407  688  305  607  452  324  214  516  167  453  241  380  414  217  333  624  338  540  397  329   54  774  141  115  528  213  848  645  907  780  601  211  299
+ [307]  581  354  132  903  827  546  805   12  964  532  335  186  364  981  456   49  539  163  449  264  790  317  461  908   58  658  788  370  826  943  872  190  727  947
+ [341]  799  929   41  958   31  655   19  669  823   22  716   27  911   63  504    3  666  511  746  392  923  270  829  348  593  227   11  479   56  189  228  999  933  894
+ [375]  520  474  877  954  159  123  940   88  486  501   45  477  161  922  695  216  233  358  866  425  959  417  846  955  681  984  291  543  526  502  842  928  184   17
+ [409]  989  377  587  884   48  696  918  891   76  678   67  740   35  296  950  888  140  583  295  595  825  418   39  340  849  553  665  776  753  576  983  808   71  556
+ [443]  987  869  178  973  567  992   96  243  880  112  375  344  820   20  843  494  830  679  440  111  207  497  509  915  367   33  239  185  857  493  613  465   73  850
+ [477]  784  510  673  801  656  384  781  865  686   23  200  982  898  851  472  451  146  168  195   29  249  269  711  373   55  492  431  875  297  365  592  336  960  237
+ [511]  225   40  208  160  530  640  739  803  699  972  789  906  550  554  328  421  483  635  259  913  164  374  722  489   59  899  897  142  514  731  172  298  284  835
+ [545]  900  290  991  995  920  156  713  179  283   15  693  733  934  905  800  224  612  478    8  828  708  582  646  447  807  485  831  795  589  706  734  921  170   82
+ [579]  652  810  137  339  300  103  638  280  350  936   95  815  382  642  647  591  536   42  902   89  210  797  282  254  347  147  919  769  760  617  786  127  615  782
+ [613]  975  862   52  359  946   18  572  244  446  470   16   92  729  549  870  521  500  563  916  750  564  484  579  169  445  648  654  547  261  357  689   97  308   75
+ [647]  181  281   30  165  793  155  303  523  386  600  628  762   94  404  631  182  342  429  772  962  346  951  513  387  325  914  910  924  433  130  717  931  961  120
+ [681]    7  887  596  773  864  385  106   51  723  751  220  853  868   70  754  977  363  376  860  871   83  968  525  110  796  104  116  332  258  240  215  545  833   81
+ [715]  176  814  997   60  721  129  398  941  752  390  437   21  770   98  838  117  467  856  391  411  629  119  441  643   74  356  424  779  879  293  229  230  118  926
+ [749]  945  326   77  174  932  837  636   24  604  627  580  331  126  498  602  187  196  901  476   47  475  517   57  507    5  565  766  687  938  676  183   26  257  736
+ [783]  322  349  892  633  158  460  953  641   32  285  614  279  889  480  219  925  395  519  618   93  878  728    2  262  193  757  221  323  238  672  765  758  939  443
+ [817]  597  663  990  162  206  606    4  599  798  372  570  448  683  212  469  351  616  422  701  821  383  436  578  360  705   37  651  912  464  428  533  107  896  573
+ [851]  245  787  555  575  748  822  692  341  198  694  420  490  415  133  690  885  537  366  100  917    9  783  459  487  248  930  406  619  819  623  993  603  427  609
+ [885]  709  403  605  232  684  253  626  551   50  816  247  650  505  561  806  876  677  524  620  585  859  114  518  771  134  841  309  394  234  791  707  321  974  226
+ [919]  412  942  242  544  273  252  720  286  289  714  704  145   65  845  201  265  194   66  256  260  166  755  304  761  730  935   99  890  852  362  777  741  588   25
+ [953]  320  844  209  834  496  202  778  963  976  675  881  667  979  854  149  861  188  763  571  574  410  732  621   91  432  105  408  747  685  560  965  863   61  462
+ [987]  419  702  882  218  278  151  996  792   14  144  759  703  712   13
+R > order(runif(1000))
+   [1]  889  688  663  406  735  485  365  723  207  745  586  851  268  471  294  479   97  693  117  484   98  617  579  445  783  175  166  665  323  850  491  789  220  832
+  [35]  172  951  608  111  896  415  965  926  135  746  560  984  410  755  108   37  183  640  119  383   44  760  427  902  906  892  118  488  938  580  458  355  162   20
+  [69]  917  772  876  903  210  113  507   76  964  927  729  624  970  419  426  819  489  201  311  520  991  668  623  622  615  804  277  644  578  983  214  359  524  332
+ [103]  957  636  103  203   71   11  293  400  989  420   92  708  651  946  349  421   82  146  968  681  318  784  430  655  593  441  407  864  616  475   63  374  696  493
+ [137]  481  563   96  792  250  768  424  592   19  195  486  937  347  527  575   56  144  795  880  101  582  503  257  705  234   47  189  159  370  714  264  532  235  515
+ [171]  831  993   51  535  455  865  929  556  591  443  466  990  460  664  709  547  233  157  687  446  980  106  273  620  463  941  645  987    6  785   54  336  839  846
+ [205]  913  976  782  140  568  344  650  918   22  733  763  914  405  354  431  942  133  474  955  530  161  439  557  215   69  901  731  193  315  712  716  544  483  922
+ [239]  619  376  342  200  391  866  750  747  129  672  231   30  447  816  388  847  939  797  588  449  657  206  190  947  590  312  949   86  290  327  683  812  861  516
+ [273]  492  808  358  262  357  561  662  549  259  589  244  330  124  345  369  995  943  422  260  125  477  164  517  707  151  780  478  801  915  139  194  413  461  859
+ [307]  988  704  604  191  204  798   72  743   21  526  227  448  116  104  512  269  120  411   61  173  147  652  254  584  102  905  877  855  531  514  263  408  289  386
+ [341]  468  387  694  836  824  308  737  185  883  564   31  282  297   66  742  956  697  107  771  817  295  632  559   46  614   77  606  673  361   78    9  247   85  571
+ [375]  860  611  362  639  321  399  305  165  253  628  437  954   80  171  818  778   23  389  626  299  837  741  959  232  154  245  453   39    5  346  212  873  418   25
+ [409]  343  414  521  229   67  122  156  219  286  581  371  790  736   89    1  607  497  574  811  656  288  618  381   62  670  605  258  255  923  425  572  464  291  403
+ [443]  225  576  868  502  775  585  642  109  339  992  843  384  442  601  281  921   14  679   34  840  186   70  356   55  476  838  701  764  525  352  777  996   52  738
+ [477]  377  380  472  631  230   57  881  528  353  827  536  316   60  409  150  237  936  328  794  594   99  457  958  600  972  218  270  692  110  351  625  822  805  329
+ [511]  848   75  791  573   28  999   87  397  337  962    2  635  197  454  753  456  893  945  963  609  570  765  834  748  152  434   64  136  372   35  658  952  973  932
+ [545]  126  788  759  121  538 1000  870  367  256  494  501  248  898  577  773  730  542  402  974  878  284  634  304  666  149  168  123  223  919  490  440  208   65  236
+ [579]  241  828  423  287   27  529  506  669  348  653  473  326  216  217  246  725  500  869  209  134  660  931  296  462  325  160  891  718  271  703  100  858  894  511
+ [613]  184   84  678  809  499  188  324  522   15  510   18   95  720  379  814  925  960  598  181  648  132  543  317  314  392  830  309  552  787  702  674  599  416  211
+ [647]  363  756  335  885  842  280  178  849  398   38  629  341   40  981  523  982  667  433  487  825  740  240  841  690  509  820  933  758  734   79  659  199  971  732
+ [681]  920  550   33  436  174  908  844  800  799  285  546  205   10  950  228  307  202  596   59  350  886  603  274  310  562  686  935  417  444  252  266  567  459  534
+ [715]  196  769  744   42  977  301  900  874  176  545  265  142  537  114  360   90  671  863  641  700  757  676  835  966  986  396  373  754  393  711   29  815  583  907
+ [749]   68  685   88  368  272  180  470  909   49  649  385  682  482  401  553  627  940  610  566  382    3  187  867  182   12  242  890   91  554  306  961  141  774  751
+ [783]  997  395  726  739  602  698  621   41  766  953  728  540  428  452  249  169  469  390  143   74  213  813  689  807  978   32  975   53  661  875  551  496  239  569
+ [817]  198  222   36  221  283  267  587  979  684  432  613  967  548  888  845  853  803  691  638  404  519  275  884  887  115  261   81  895  826  276  654  131  505  897
+ [851]  630  302  438  322  749  793  465  128   13  852  112  762  541  643  637  646   73  158  786  910  192  298  985   17  994  243  930  854  882  948  394  722  724  856
+ [885]  105  155  597  904   83  761  533  928  862  238  364  333  375  833  450  871   93  879  677  699   26    7  595  934  167   48  508  647  715  163  313  177  810  565
+ [919]  829  429    8  138  179  435  796   94  911  821   16  320  279  752  719  292   58  727  331  713  378  127  823  675  495  451  504  278  480  137  969  498  148  633
+ [953]  130  680  912  319  513  251  776  899  226  366   43  300    4  467  717  924  170  695  338  710  857  334  721   45  303  806   24  539  224  872  518  781  340  767
+ [987]   50  770  612  802  779  412  558  998  944  153  706  145  555  916
+R > set.seed(12345)
+R > credit_rand<-credit[order(runif(1000)),]
+R > summary(credit_rand$amount)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    250    1366    2320    3271    3972   18420 
+R > credit_train<-credit_rand[1:900,]
+R > credit_test<-credit_rand[901:1000,]
+R > mapply(prop.table, list(train=table(credit_train$default), test=table(credit_test$default)))
+        train test
+no  0.7022222 0.68
+yes 0.2977778 0.32
+R > ?mapply
+R > install.packages("C50", repos="http://cran.csiro.au")
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/C50_0.1.0-24.tgz'을 시도합니다
+Content type 'application/x-gzip' length 412073 bytes (402 KB)
+==================================================
+downloaded 402 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+R > head(credit_train)
+    checking_balance months_loan_duration credit_history              purpose amount savings_balance employment_duration percent_of_income years_at_residence age other_credit
+14            < 0 DM                   24       critical                  car   1199        < 100 DM           > 7 years                 4                  4  60         none
+448       1 - 200 DM                    7           good furniture/appliances   2576        < 100 DM         1 - 4 years                 2                  2  35         none
+697       1 - 200 DM                   12           good furniture/appliances   1103        < 100 DM         4 - 7 years                 4                  3  29         none
+32            < 0 DM                   24           good furniture/appliances   4020        < 100 DM         1 - 4 years                 2                  2  27        store
+196       1 - 200 DM                    9       critical            education   1501        < 100 DM           > 7 years                 2                  3  34         none
+83           unknown                   18           good             business   1568    100 - 500 DM         1 - 4 years                 3                  4  24         none
+    housing existing_loans_count        job dependents phone default
+14      own                    2  unskilled          1    no     yes
+448     own                    1    skilled          1    no      no
+697     own                    2    skilled          1    no      no
+32      own                    1    skilled          1    no      no
+196     own                    2 management          1   yes     yes
+83     rent                    1  unskilled          1    no      no
+R > str(credit_train)
+'data.frame':	900 obs. of  17 variables:
+ $ checking_balance    : Factor w/ 4 levels "< 0 DM","> 200 DM",..: 1 3 3 1 3 4 1 3 3 1 ...
+ $ months_loan_duration: int  24 7 12 24 9 18 33 9 20 15 ...
+ $ credit_history      : Factor w/ 5 levels "critical","good",..: 1 2 2 2 1 2 1 2 4 2 ...
+ $ purpose             : Factor w/ 6 levels "business","car",..: 2 5 5 5 4 1 5 5 3 5 ...
+ $ amount              : int  1199 2576 1103 4020 1501 1568 4281 918 2629 1845 ...
+ $ savings_balance     : Factor w/ 5 levels "< 100 DM","> 1000 DM",..: 1 1 1 1 1 3 4 1 1 1 ...
+ $ employment_duration : Factor w/ 5 levels "< 1 year","> 7 years",..: 2 3 4 3 2 3 3 3 3 1 ...
+ $ percent_of_income   : int  4 2 4 2 2 3 1 4 2 4 ...
+ $ years_at_residence  : int  4 2 3 2 3 4 4 1 3 1 ...
+ $ age                 : int  60 35 29 27 34 24 23 30 29 46 ...
+ $ other_credit        : Factor w/ 3 levels "bank","none",..: 2 2 2 3 2 2 2 2 1 2 ...
+ $ housing             : Factor w/ 3 levels "other","own",..: 2 2 2 2 2 3 2 2 2 3 ...
+ $ existing_loans_count: int  2 1 2 1 2 1 2 1 2 1 ...
+ $ job                 : Factor w/ 4 levels "management","skilled",..: 4 2 2 2 1 4 2 2 2 2 ...
+ $ dependents          : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ phone               : Factor w/ 2 levels "no","yes": 1 1 1 1 2 1 1 1 2 1 ...
+ $ default             : Factor w/ 2 levels "no","yes": 2 1 1 1 2 1 2 2 1 1 ...
+R > library(C50)
+R > credit_model<-C5.0(credit_train[-17], credit_train$default)
+R > ?C5.0
+R > credit_model
+
+Call:
+C5.0.default(x = credit_train[-17], y = credit_train$default)
+
+Classification Tree
+Number of samples: 900 
+Number of predictors: 16 
+
+Tree size: 67 
+
+Non-standard options: attempt to group attributes
+
+R > summary(credit_model)
+
+Call:
+C5.0.default(x = credit_train[-17], y = credit_train$default)
+
+
+C5.0 [Release 2.07 GPL Edition]  	Mon Aug 17 08:21:42 2015
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 900 cases (17 attributes) from undefined.data
+
+Decision tree:
+
+checking_balance = unknown: no (358/44)
+checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+:...credit_history in {perfect,very good}:
+    :...dependents > 1: yes (10/1)
+    :   dependents <= 1:
+    :   :...savings_balance = < 100 DM: yes (39/11)
+    :       savings_balance in {> 1000 DM,500 - 1000 DM,unknown}: no (8/1)
+    :       savings_balance = 100 - 500 DM:
+    :       :...checking_balance = < 0 DM: no (1)
+    :           checking_balance in {> 200 DM,1 - 200 DM}: yes (5/1)
+    credit_history in {critical,good,poor}:
+    :...months_loan_duration <= 11: no (87/14)
+        months_loan_duration > 11:
+        :...savings_balance = > 1000 DM: no (13)
+            savings_balance in {< 100 DM,100 - 500 DM,500 - 1000 DM,unknown}:
+            :...checking_balance = > 200 DM:
+                :...dependents > 1: yes (3)
+                :   dependents <= 1:
+                :   :...credit_history in {good,poor}: no (23/3)
+                :       credit_history = critical:
+                :       :...amount <= 2337: yes (3)
+                :           amount > 2337: no (6)
+                checking_balance = 1 - 200 DM:
+                :...savings_balance = unknown: no (34/6)
+                :   savings_balance in {< 100 DM,100 - 500 DM,500 - 1000 DM}:
+                :   :...months_loan_duration > 45: yes (11/1)
+                :       months_loan_duration <= 45:
+                :       :...other_credit = store:
+                :           :...age <= 35: yes (4)
+                :           :   age > 35: no (2)
+                :           other_credit = bank:
+                :           :...years_at_residence <= 1: no (3)
+                :           :   years_at_residence > 1:
+                :           :   :...existing_loans_count <= 1: yes (5)
+                :           :       existing_loans_count > 1:
+                :           :       :...percent_of_income <= 2: no (4/1)
+                :           :           percent_of_income > 2: yes (3)
+                :           other_credit = none:
+                :           :...job = unemployed: no (1)
+                :               job = management:
+                :               :...amount <= 7511: no (10/3)
+                :               :   amount > 7511: yes (7)
+                :               job = unskilled: [S1]
+                :               job = skilled:
+                :               :...dependents <= 1: no (55/15)
+                :                   dependents > 1:
+                :                   :...age <= 34: no (3)
+                :                       age > 34: yes (4)
+                checking_balance = < 0 DM:
+                :...job = management: no (26/6)
+                    job = unemployed: yes (4/1)
+                    job = unskilled:
+                    :...employment_duration in {4 - 7 years,
+                    :   :                       unemployed}: no (4)
+                    :   employment_duration = < 1 year:
+                    :   :...other_credit = bank: no (1)
+                    :   :   other_credit in {none,store}: yes (11/2)
+                    :   employment_duration = > 7 years:
+                    :   :...other_credit in {bank,none}: no (5/1)
+                    :   :   other_credit = store: yes (2)
+                    :   employment_duration = 1 - 4 years:
+                    :   :...age <= 39: no (14/3)
+                    :       age > 39:
+                    :       :...credit_history in {critical,good}: yes (3)
+                    :           credit_history = poor: no (1)
+                    job = skilled:
+                    :...credit_history = poor:
+                        :...savings_balance in {< 100 DM,100 - 500 DM,
+                        :   :                   500 - 1000 DM}: yes (8)
+                        :   savings_balance = unknown: no (1)
+                        credit_history = critical:
+                        :...other_credit = store: no (0)
+                        :   other_credit = bank: yes (4)
+                        :   other_credit = none:
+                        :   :...savings_balance in {100 - 500 DM,
+                        :       :                   unknown}: no (1)
+                        :       savings_balance = 500 - 1000 DM: yes (1)
+                        :       savings_balance = < 100 DM:
+                        :       :...months_loan_duration <= 13:
+                        :           :...percent_of_income <= 3: yes (3)
+                        :           :   percent_of_income > 3: no (3/1)
+                        :           months_loan_duration > 13:
+                        :           :...amount <= 5293: no (10/1)
+                        :               amount > 5293: yes (2)
+                        credit_history = good:
+                        :...existing_loans_count > 1: yes (5)
+                            existing_loans_count <= 1:
+                            :...other_credit = store: no (2)
+                                other_credit = bank:
+                                :...percent_of_income <= 2: yes (2)
+                                :   percent_of_income > 2: no (6/1)
+                                other_credit = none: [S2]
+
+SubTree [S1]
+
+employment_duration in {< 1 year,1 - 4 years}: yes (11/3)
+employment_duration in {> 7 years,4 - 7 years,unemployed}: no (8)
+
+SubTree [S2]
+
+savings_balance = 100 - 500 DM: yes (3)
+savings_balance = 500 - 1000 DM: no (1)
+savings_balance = unknown:
+:...phone = no: yes (9/1)
+:   phone = yes: no (3/1)
+savings_balance = < 100 DM:
+:...percent_of_income <= 1: no (4)
+    percent_of_income > 1:
+    :...phone = yes: yes (10/1)
+        phone = no:
+        :...purpose in {business,car0,education,renovations}: yes (3)
+            purpose = car:
+            :...percent_of_income <= 3: no (2)
+            :   percent_of_income > 3: yes (6/1)
+            purpose = furniture/appliances:
+            :...years_at_residence <= 1: no (4)
+                years_at_residence > 1:
+                :...housing = other: no (1)
+                    housing = rent: yes (2)
+                    housing = own:
+                    :...amount <= 1778: no (3)
+                        amount > 1778:
+                        :...years_at_residence <= 3: yes (6)
+                            years_at_residence > 3: no (3/1)
+
+
+Evaluation on training data (900 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    66  125(13.9%)   <<
+
+
+	   (a)   (b)    <-classified as
+	  ----  ----
+	   609    23    (a): class no
+	   102   166    (b): class yes
+
+
+	Attribute usage:
+
+	100.00%	checking_balance
+	 60.22%	credit_history
+	 53.22%	months_loan_duration
+	 49.44%	savings_balance
+	 30.89%	job
+	 25.89%	other_credit
+	 17.78%	dependents
+	  9.67%	existing_loans_count
+	  7.22%	percent_of_income
+	  6.67%	employment_duration
+	  5.78%	phone
+	  5.56%	amount
+	  3.78%	years_at_residence
+	  3.44%	age
+	  3.33%	purpose
+	  1.67%	housing
+
+
+Time: 0.0 secs
+
+R > table(credit_train$checking_balance)
+
+    < 0 DM   > 200 DM 1 - 200 DM    unknown 
+       247         56        239        358 
+R > credit_pred<-predict(credit_model, credit_test)
+R > CrossTable(credit_test$default, credit_pred)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+| Chi-square contribution |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                    | credit_pred 
+credit_test$default |        no |       yes | Row Total | 
+--------------------|-----------|-----------|-----------|
+                 no |        57 |        11 |        68 | 
+                    |     1.091 |     2.950 |           | 
+                    |     0.838 |     0.162 |     0.680 | 
+                    |     0.781 |     0.407 |           | 
+                    |     0.570 |     0.110 |           | 
+--------------------|-----------|-----------|-----------|
+                yes |        16 |        16 |        32 | 
+                    |     2.319 |     6.270 |           | 
+                    |     0.500 |     0.500 |     0.320 | 
+                    |     0.219 |     0.593 |           | 
+                    |     0.160 |     0.160 |           | 
+--------------------|-----------|-----------|-----------|
+       Column Total |        73 |        27 |       100 | 
+                    |     0.730 |     0.270 |           | 
+--------------------|-----------|-----------|-----------|
+
+ 
+R > CrossTable(credit_test$default, credit_pred, prop.chisq=FALSE, prop.c=FALSE,prop.r=FALSE, dnn=c("actual default", "predicted default"))
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+               | predicted default 
+actual default |        no |       yes | Row Total | 
+---------------|-----------|-----------|-----------|
+            no |        57 |        11 |        68 | 
+               |     0.570 |     0.110 |           | 
+---------------|-----------|-----------|-----------|
+           yes |        16 |        16 |        32 | 
+               |     0.160 |     0.160 |           | 
+---------------|-----------|-----------|-----------|
+  Column Total |        73 |        27 |       100 | 
+---------------|-----------|-----------|-----------|
+
+ 
+R > credit_boost10<-C5.0(credit_train[-17], credit_train$default, trials=10)
+R > credit_boost10
+
+Call:
+C5.0.default(x = credit_train[-17], y = credit_train$default, trials = 10)
+
+Classification Tree
+Number of samples: 900 
+Number of predictors: 16 
+
+Number of boosting iterations: 10 
+Average tree size: 56 
+
+Non-standard options: attempt to group attributes
+
+R > summary(credit_boost10)
+
+Call:
+C5.0.default(x = credit_train[-17], y = credit_train$default, trials = 10)
+
+
+C5.0 [Release 2.07 GPL Edition]  	Mon Aug 17 08:56:38 2015
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 900 cases (17 attributes) from undefined.data
+
+-----  Trial 0:  -----
+
+Decision tree:
+
+checking_balance = unknown: no (358/44)
+checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+:...credit_history in {perfect,very good}:
+    :...dependents > 1: yes (10/1)
+    :   dependents <= 1:
+    :   :...savings_balance = < 100 DM: yes (39/11)
+    :       savings_balance in {> 1000 DM,500 - 1000 DM,unknown}: no (8/1)
+    :       savings_balance = 100 - 500 DM:
+    :       :...checking_balance = < 0 DM: no (1)
+    :           checking_balance in {> 200 DM,1 - 200 DM}: yes (5/1)
+    credit_history in {critical,good,poor}:
+    :...months_loan_duration <= 11: no (87/14)
+        months_loan_duration > 11:
+        :...savings_balance = > 1000 DM: no (13)
+            savings_balance in {< 100 DM,100 - 500 DM,500 - 1000 DM,unknown}:
+            :...checking_balance = > 200 DM:
+                :...dependents > 1: yes (3)
+                :   dependents <= 1:
+                :   :...credit_history in {good,poor}: no (23/3)
+                :       credit_history = critical:
+                :       :...amount <= 2337: yes (3)
+                :           amount > 2337: no (6)
+                checking_balance = 1 - 200 DM:
+                :...savings_balance = unknown: no (34/6)
+                :   savings_balance in {< 100 DM,100 - 500 DM,500 - 1000 DM}:
+                :   :...months_loan_duration > 45: yes (11/1)
+                :       months_loan_duration <= 45:
+                :       :...other_credit = store:
+                :           :...age <= 35: yes (4)
+                :           :   age > 35: no (2)
+                :           other_credit = bank:
+                :           :...years_at_residence <= 1: no (3)
+                :           :   years_at_residence > 1:
+                :           :   :...existing_loans_count <= 1: yes (5)
+                :           :       existing_loans_count > 1:
+                :           :       :...percent_of_income <= 2: no (4/1)
+                :           :           percent_of_income > 2: yes (3)
+                :           other_credit = none:
+                :           :...job = unemployed: no (1)
+                :               job = management:
+                :               :...amount <= 7511: no (10/3)
+                :               :   amount > 7511: yes (7)
+                :               job = unskilled: [S1]
+                :               job = skilled:
+                :               :...dependents <= 1: no (55/15)
+                :                   dependents > 1:
+                :                   :...age <= 34: no (3)
+                :                       age > 34: yes (4)
+                checking_balance = < 0 DM:
+                :...job = management: no (26/6)
+                    job = unemployed: yes (4/1)
+                    job = unskilled:
+                    :...employment_duration in {4 - 7 years,
+                    :   :                       unemployed}: no (4)
+                    :   employment_duration = < 1 year:
+                    :   :...other_credit = bank: no (1)
+                    :   :   other_credit in {none,store}: yes (11/2)
+                    :   employment_duration = > 7 years:
+                    :   :...other_credit in {bank,none}: no (5/1)
+                    :   :   other_credit = store: yes (2)
+                    :   employment_duration = 1 - 4 years:
+                    :   :...age <= 39: no (14/3)
+                    :       age > 39:
+                    :       :...credit_history in {critical,good}: yes (3)
+                    :           credit_history = poor: no (1)
+                    job = skilled:
+                    :...credit_history = poor:
+                        :...savings_balance in {< 100 DM,100 - 500 DM,
+                        :   :                   500 - 1000 DM}: yes (8)
+                        :   savings_balance = unknown: no (1)
+                        credit_history = critical:
+                        :...other_credit = store: no (0)
+                        :   other_credit = bank: yes (4)
+                        :   other_credit = none:
+                        :   :...savings_balance in {100 - 500 DM,
+                        :       :                   unknown}: no (1)
+                        :       savings_balance = 500 - 1000 DM: yes (1)
+                        :       savings_balance = < 100 DM:
+                        :       :...months_loan_duration <= 13:
+                        :           :...percent_of_income <= 3: yes (3)
+                        :           :   percent_of_income > 3: no (3/1)
+                        :           months_loan_duration > 13:
+                        :           :...amount <= 5293: no (10/1)
+                        :               amount > 5293: yes (2)
+                        credit_history = good:
+                        :...existing_loans_count > 1: yes (5)
+                            existing_loans_count <= 1:
+                            :...other_credit = store: no (2)
+                                other_credit = bank:
+                                :...percent_of_income <= 2: yes (2)
+                                :   percent_of_income > 2: no (6/1)
+                                other_credit = none: [S2]
+
+SubTree [S1]
+
+employment_duration in {< 1 year,1 - 4 years}: yes (11/3)
+employment_duration in {> 7 years,4 - 7 years,unemployed}: no (8)
+
+SubTree [S2]
+
+savings_balance = 100 - 500 DM: yes (3)
+savings_balance = 500 - 1000 DM: no (1)
+savings_balance = unknown:
+:...phone = no: yes (9/1)
+:   phone = yes: no (3/1)
+savings_balance = < 100 DM:
+:...percent_of_income <= 1: no (4)
+    percent_of_income > 1:
+    :...phone = yes: yes (10/1)
+        phone = no:
+        :...purpose in {business,car0,education,renovations}: yes (3)
+            purpose = car:
+            :...percent_of_income <= 3: no (2)
+            :   percent_of_income > 3: yes (6/1)
+            purpose = furniture/appliances:
+            :...years_at_residence <= 1: no (4)
+                years_at_residence > 1:
+                :...housing = other: no (1)
+                    housing = rent: yes (2)
+                    housing = own:
+                    :...amount <= 1778: no (3)
+                        amount > 1778:
+                        :...years_at_residence <= 3: yes (6)
+                            years_at_residence > 3: no (3/1)
+
+-----  Trial 1:  -----
+
+Decision tree:
+
+checking_balance in {< 0 DM,1 - 200 DM}:
+:...savings_balance in {> 1000 DM,500 - 1000 DM}: no (29/8.6)
+:   savings_balance = 100 - 500 DM:
+:   :...credit_history in {critical,perfect,poor}: no (18/3.2)
+:   :   credit_history in {good,very good}: yes (30.5/9.5)
+:   savings_balance = unknown:
+:   :...credit_history in {critical,perfect,poor}: no (16.6)
+:   :   credit_history in {good,very good}:
+:   :   :...job = management: yes (9.3/2.4)
+:   :       job in {unemployed,unskilled}: no (7.9/0.8)
+:   :       job = skilled:
+:   :       :...purpose in {business,car0,renovations}: yes (0)
+:   :           purpose = education: no (3.2)
+:   :           purpose in {car,furniture/appliances}:
+:   :           :...months_loan_duration <= 18: yes (16.2/3.2)
+:   :               months_loan_duration > 18: no (16.5/7)
+:   savings_balance = < 100 DM:
+:   :...months_loan_duration > 47: yes (24.3/3.1)
+:       months_loan_duration <= 47:
+:       :...job = unemployed: yes (7/3.1)
+:           job = unskilled:
+:           :...housing in {other,rent}: yes (14.2/4.7)
+:           :   housing = own: no (66.4/20.3)
+:           job = skilled:
+:           :...percent_of_income > 2: yes (109.5/40.2)
+:           :   percent_of_income <= 2:
+:           :   :...employment_duration in {< 1 year,> 7 years,
+:           :       :                       4 - 7 years}: yes (36/15)
+:           :       employment_duration in {1 - 4 years,
+:           :                               unemployed}: no (31.3/7)
+:           job = management:
+:           :...existing_loans_count > 2: no (3.2)
+:               existing_loans_count <= 2:
+:               :...employment_duration in {< 1 year,
+:                   :                       4 - 7 years}: no (9.4/0.8)
+:                   employment_duration in {> 7 years,
+:                   :                       1 - 4 years}: yes (30.3/7.1)
+:                   employment_duration = unemployed:
+:                   :...percent_of_income <= 2: no (4.7)
+:                       percent_of_income > 2: yes (13.9/4)
+checking_balance in {> 200 DM,unknown}:
+:...other_credit in {bank,store}:
+    :...purpose = renovations: yes (0)
+    :   purpose in {car0,furniture/appliances}: no (31.4/6.9)
+    :   purpose in {business,car,education}:
+    :   :...percent_of_income <= 1: no (7/2.3)
+    :       percent_of_income > 1: yes (44.8/11.1)
+    other_credit = none:
+    :...credit_history in {critical,perfect}: no (116.7/10.1)
+        credit_history in {good,poor,very good}:
+        :...existing_loans_count > 1:
+            :...employment_duration = 4 - 7 years: no (7.9)
+            :   employment_duration in {< 1 year,> 7 years,1 - 4 years,
+            :   :                       unemployed}:
+            :   :...job in {management,unemployed}: yes (6.9)
+            :       job in {skilled,unskilled}:
+            :       :...years_at_residence <= 1: yes (4.6)
+            :           years_at_residence > 1:
+            :           :...years_at_residence <= 3: no (15.7/2.3)
+            :               years_at_residence > 3: yes (15.5/4)
+            existing_loans_count <= 1:
+            :...credit_history = poor: yes (9.3/2.4)
+                credit_history = very good: no (1.6/0.8)
+                credit_history = good:
+                :...phone = yes: no (54.4/4.6)
+                    phone = no:
+                    :...job in {management,unemployed}: no (2.4)
+                        job = skilled:
+                        :...savings_balance in {> 1000 DM,100 - 500 DM,
+                        :   :                   500 - 1000 DM,
+                        :   :                   unknown}: no (23.7)
+                        :   savings_balance = < 100 DM:
+                        :   :...years_at_residence <= 2: no (19.6/4.6)
+                        :       years_at_residence > 2: yes (12.4/3.2)
+                        job = unskilled:
+                        :...checking_balance = > 200 DM: yes (10.1/2.4)
+                            checking_balance = unknown:
+                            :...percent_of_income <= 3: no (9.5)
+                                percent_of_income > 3: yes (9.3/2.4)
+
+-----  Trial 2:  -----
+
+Decision tree:
+
+months_loan_duration <= 8:
+:...existing_loans_count > 1: no (19.1)
+:   existing_loans_count <= 1:
+:   :...amount <= 3161: no (45.5/7.7)
+:       amount > 3161: yes (6.3/0.6)
+months_loan_duration > 8:
+:...checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+    :...employment_duration = unemployed:
+    :   :...months_loan_duration > 33: no (11.4)
+    :   :   months_loan_duration <= 33:
+    :   :   :...phone = no: yes (11/2.7)
+    :   :       phone = yes: no (15.5/6.5)
+    :   employment_duration = 4 - 7 years:
+    :   :...months_loan_duration <= 22: no (44.7/6.7)
+    :   :   months_loan_duration > 22:
+    :   :   :...job = management: no (4.6/0.6)
+    :   :       job in {unemployed,unskilled}: yes (4.6/1.3)
+    :   :       job = skilled:
+    :   :       :...savings_balance in {< 100 DM,> 1000 DM,
+    :   :           :                   500 - 1000 DM}: yes (22.5/7.8)
+    :   :           savings_balance in {100 - 500 DM,unknown}: no (8.8/2.1)
+    :   employment_duration = > 7 years:
+    :   :...amount > 6948: yes (13/1.3)
+    :   :   amount <= 6948:
+    :   :   :...purpose in {business,car0,education}: yes (22.8/7.8)
+    :   :       purpose = renovations: no (1.3)
+    :   :       purpose = car:
+    :   :       :...job = unemployed: no (0)
+    :   :       :   job = unskilled: yes (6.9)
+    :   :       :   job in {management,skilled}:
+    :   :       :   :...years_at_residence <= 1: yes (2.5)
+    :   :       :       years_at_residence > 1: no (28.6/7.1)
+    :   :       purpose = furniture/appliances:
+    :   :       :...other_credit in {bank,store}: yes (7.3/2.1)
+    :   :           other_credit = none:
+    :   :           :...job = management: yes (5.1/1.3)
+    :   :               job in {skilled,unemployed,unskilled}: no (29.2/3.4)
+    :   employment_duration = 1 - 4 years:
+    :   :...savings_balance = > 1000 DM: no (6.4)
+    :   :   savings_balance in {< 100 DM,100 - 500 DM,500 - 1000 DM,unknown}:
+    :   :   :...housing = other: yes (12/1.9)
+    :   :       housing in {own,rent}:
+    :   :       :...credit_history in {perfect,poor,very good}: no (29.3/8.6)
+    :   :           credit_history = critical:
+    :   :           :...months_loan_duration <= 16: no (10.6/0.6)
+    :   :           :   months_loan_duration > 16: yes (14.5/4.1)
+    :   :           credit_history = good:
+    :   :           :...phone = no: yes (81.6/33.5)
+    :   :               phone = yes: no (30.2/11)
+    :   employment_duration = < 1 year:
+    :   :...savings_balance in {> 1000 DM,unknown}: no (9.1/1.9)
+    :       savings_balance in {100 - 500 DM,500 - 1000 DM}: yes (15.6/3.4)
+    :       savings_balance = < 100 DM:
+    :       :...housing = other: no (4.7)
+    :           housing in {own,rent}:
+    :           :...years_at_residence > 1: yes (41.6/11)
+    :               years_at_residence <= 1:
+    :               :...job in {management,unskilled}: no (13.9/4.9)
+    :                   job = unemployed: yes (2.1)
+    :                   job = skilled:
+    :                   :...percent_of_income <= 3: yes (12.3/3.3)
+    :                       percent_of_income > 3: no (9.7/0.6)
+    checking_balance = unknown:
+    :...other_credit in {bank,store}:
+        :...employment_duration in {1 - 4 years,unemployed}: yes (31.9/7.2)
+        :   employment_duration in {< 1 year,> 7 years,4 - 7 years}:
+        :   :...other_credit = store: no (8.1)
+        :       other_credit = bank:
+        :       :...age <= 43: yes (22/8.6)
+        :           age > 43: no (9)
+        other_credit = none:
+        :...age > 30: no (134.2/16.1)
+            age <= 30:
+            :...amount > 6458: yes (14.1/2.6)
+                amount <= 6458:
+                :...age <= 22: yes (17.4/5.9)
+                    age > 22:
+                    :...percent_of_income <= 3: no (22.7)
+                        percent_of_income > 3:
+                        :...job = unemployed: no (0)
+                            job in {management,unskilled}: yes (12.5/3.9)
+                            job = skilled:
+                            :...purpose in {business,education,
+                                :           renovations}: yes (8.6/1.9)
+                                purpose in {car,car0,
+                                            furniture/appliances}: no (14.9)
+
+-----  Trial 3:  -----
+
+Decision tree:
+
+amount > 11054:
+:...credit_history in {critical,good,perfect}: yes (24.9/2.7)
+:   credit_history in {poor,very good}: no (4.7/0.5)
+amount <= 11054:
+:...checking_balance in {> 200 DM,unknown}:
+    :...employment_duration = > 7 years: no (91/18.6)
+    :   employment_duration = unemployed: yes (14.3/6.6)
+    :   employment_duration = 1 - 4 years:
+    :   :...job = management: yes (16.6/6.6)
+    :   :   job in {skilled,unemployed,unskilled}: no (113.5/30.7)
+    :   employment_duration = 4 - 7 years:
+    :   :...age <= 22: yes (5.2/1.3)
+    :   :   age > 22: no (49.9/4.7)
+    :   employment_duration = < 1 year:
+    :   :...purpose in {car,car0}: no (13.3)
+    :       purpose in {business,education,furniture/appliances,renovations}:
+    :       :...amount > 6681: yes (7)
+    :           amount <= 6681:
+    :           :...other_credit in {bank,store}: no (4)
+    :               other_credit = none:
+    :               :...months_loan_duration > 33: no (2.5)
+    :                   months_loan_duration <= 33:
+    :                   :...amount <= 1503: no (12.7/2.3)
+    :                       amount > 1503: yes (18.3/5)
+    checking_balance in {< 0 DM,1 - 200 DM}:
+    :...credit_history = perfect:
+        :...percent_of_income <= 3: no (16.5/5.9)
+        :   percent_of_income > 3: yes (6.9)
+        credit_history = poor:
+        :...percent_of_income <= 1: no (7.2)
+        :   percent_of_income > 1:
+        :   :...savings_balance in {< 100 DM,> 1000 DM,
+        :       :                   500 - 1000 DM}: yes (19.2/3.9)
+        :       savings_balance in {100 - 500 DM,unknown}: no (12.8/2.3)
+        credit_history = very good:
+        :...other_credit = none: yes (10.6)
+        :   other_credit in {bank,store}:
+        :   :...months_loan_duration <= 9: yes (4.7)
+        :       months_loan_duration > 9: no (20.6/8.1)
+        credit_history = critical:
+        :...years_at_residence <= 1: no (7.5)
+        :   years_at_residence > 1:
+        :   :...savings_balance in {> 1000 DM,100 - 500 DM,
+        :       :                   unknown}: no (16.3/2.4)
+        :       savings_balance = 500 - 1000 DM: yes (2.8/0.5)
+        :       savings_balance = < 100 DM:
+        :       :...dependents > 1: no (12.9/0.5)
+        :           dependents <= 1:
+        :           :...other_credit = bank: yes (6.7/0.5)
+        :               other_credit = store: no (1.7/0.5)
+        :               other_credit = none:
+        :               :...age > 61: no (6.4)
+        :                   age <= 61:
+        :                   :...existing_loans_count > 2: no (3.3)
+        :                       existing_loans_count <= 2:
+        :                       :...job in {management,unemployed,
+        :                           :       unskilled}: yes (14.6/2.7)
+        :                           job = skilled: no (41.3/17.6)
+        credit_history = good:
+        :...purpose in {business,car0,education,renovations}: no (40.7/12.7)
+            purpose = furniture/appliances:
+            :...months_loan_duration <= 7: no (10.6)
+            :   months_loan_duration > 7:
+            :   :...phone = no: no (123.2/45.7)
+            :       phone = yes:
+            :       :...years_at_residence <= 3: yes (27.8/6.6)
+            :           years_at_residence > 3: no (9.4/3.1)
+            purpose = car:
+            :...employment_duration = unemployed: no (7.1)
+                employment_duration in {< 1 year,> 7 years,1 - 4 years,
+                :                       4 - 7 years}:
+                :...dependents > 1: no (17.3/5.8)
+                    dependents <= 1:
+                    :...percent_of_income <= 2:
+                        :...amount <= 2697: yes (8.6/1.3)
+                        :   amount > 2697: no (15.4/2.2)
+                        percent_of_income > 2:
+                        :...percent_of_income <= 3: yes (17/2.3)
+                            percent_of_income > 3:
+                            :...phone = yes: no (5.7/1.1)
+                                phone = no:
+                                :...checking_balance = < 0 DM: yes (16.7/1.3)
+                                    checking_balance = 1 - 200 DM: no (10.6/4.3)
+
+-----  Trial 4:  -----
+
+Decision tree:
+
+checking_balance = unknown:
+:...other_credit in {bank,store}:
+:   :...employment_duration in {< 1 year,4 - 7 years}: no (16.1/3.4)
+:   :   employment_duration = unemployed: yes (5.8/1.9)
+:   :   employment_duration = > 7 years:
+:   :   :...age <= 41: yes (16.4/6)
+:   :   :   age > 41: no (7.7)
+:   :   employment_duration = 1 - 4 years:
+:   :   :...years_at_residence <= 1: no (3.1)
+:   :       years_at_residence > 1:
+:   :       :...amount <= 1503: no (3.6)
+:   :           amount > 1503: yes (26.3/6)
+:   other_credit = none:
+:   :...credit_history in {perfect,very good}: no (2.8)
+:       credit_history = critical:
+:       :...age > 30: no (45.3)
+:       :   age <= 30:
+:       :   :...purpose in {business,car,car0,furniture/appliances,
+:       :       :           renovations}: no (21.4/3.9)
+:       :       purpose = education: yes (3)
+:       credit_history = poor:
+:       :...dependents > 1: yes (8.2/1.8)
+:       :   dependents <= 1:
+:       :   :...age <= 29: yes (11.8/4.6)
+:       :       age > 29: no (9.9)
+:       credit_history = good:
+:       :...existing_loans_count > 1:
+:           :...percent_of_income <= 2: yes (13/0.4)
+:           :   percent_of_income > 2: no (7.5/1.3)
+:           existing_loans_count <= 1:
+:           :...percent_of_income <= 2: no (30.9/1.3)
+:               percent_of_income > 2:
+:               :...employment_duration = > 7 years: no (11.2)
+:                   employment_duration in {< 1 year,1 - 4 years,4 - 7 years,
+:                   :                       unemployed}:
+:                   :...job in {management,unemployed}: no (10.7/4.9)
+:                       job = unskilled: yes (10/3.6)
+:                       job = skilled:
+:                       :...age <= 23: yes (9.3/2.6)
+:                           age > 23: no (17.9)
+checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+:...credit_history = very good:
+    :...age <= 23: no (3)
+    :   age > 23: yes (38.4/9.1)
+    credit_history = perfect:
+    :...housing in {other,rent}: yes (9.1)
+    :   housing = own:
+    :   :...percent_of_income > 3: yes (5)
+    :       percent_of_income <= 3:
+    :       :...other_credit in {bank,none}: no (16/3.9)
+    :           other_credit = store: yes (2.7)
+    credit_history = poor:
+    :...savings_balance in {> 1000 DM,500 - 1000 DM}: yes (0)
+    :   savings_balance = unknown: no (5.9)
+    :   savings_balance in {< 100 DM,100 - 500 DM}:
+    :   :...housing = rent: no (4.7/0.4)
+    :       housing in {other,own}:
+    :       :...percent_of_income <= 2: no (14.4/3.7)
+    :           percent_of_income > 2: yes (16.9/2.7)
+    credit_history = good:
+    :...amount > 8648: yes (19.4/2.4)
+    :   amount <= 8648:
+    :   :...purpose in {business,car0}: no (18/4.2)
+    :       purpose = renovations: yes (7.1/3)
+    :       purpose = education:
+    :       :...checking_balance = < 0 DM: yes (12.1/1.4)
+    :       :   checking_balance in {> 200 DM,1 - 200 DM}: no (8.7/1.1)
+    :       purpose = car:
+    :       :...employment_duration = unemployed: no (5.9)
+    :       :   employment_duration in {< 1 year,> 7 years,1 - 4 years,
+    :       :   :                       4 - 7 years}:
+    :       :   :...job in {management,unemployed}: no (8.6/2.4)
+    :       :       job = unskilled: yes (31.1/10.2)
+    :       :       job = skilled:
+    :       :       :...housing in {other,rent}: yes (24.2/6.4)
+    :       :           housing = own:
+    :       :           :...dependents > 1: no (4.3)
+    :       :               dependents <= 1:
+    :       :               :...existing_loans_count > 1: no (3.6)
+    :       :                   existing_loans_count <= 1:
+    :       :                   :...months_loan_duration <= 13: no (9.2/1.5)
+    :       :                       months_loan_duration > 13: yes (11.6/1.4)
+    :       purpose = furniture/appliances:
+    :       :...savings_balance in {> 1000 DM,500 - 1000 DM}: no (8.8/1.8)
+    :           savings_balance = 100 - 500 DM: yes (16.1/3.5)
+    :           savings_balance = unknown:
+    :           :...employment_duration in {< 1 year,> 7 years,1 - 4 years,
+    :           :   :                       unemployed}: yes (20.8/6.5)
+    :           :   employment_duration = 4 - 7 years: no (4.9)
+    :           savings_balance = < 100 DM:
+    :           :...years_at_residence <= 1: no (31.1/9.5)
+    :               years_at_residence > 1:
+    :               :...other_credit in {bank,store}: yes (14.9/4.8)
+    :                   other_credit = none:
+    :                   :...months_loan_duration > 42: yes (5.5)
+    :                       months_loan_duration <= 42:
+    :                       :...job in {management,unemployed}: no (11.9/3.4)
+    :                           job in {skilled,unskilled}:
+    :                           :...age <= 22: yes (11.8/2.7)
+    :                               age > 22: no (76.6/33.4)
+    credit_history = critical:
+    :...savings_balance in {> 1000 DM,100 - 500 DM,unknown}: no (23.6/5.9)
+        savings_balance = 500 - 1000 DM: yes (6.2/1.6)
+        savings_balance = < 100 DM:
+        :...dependents > 1: no (12.2/1.1)
+            dependents <= 1:
+            :...age > 61: no (5.7)
+                age <= 61:
+                :...years_at_residence <= 1: no (6.1/1)
+                    years_at_residence > 1:
+                    :...other_credit in {bank,store}: yes (8.3/2.1)
+                        other_credit = none:
+                        :...amount > 5998: yes (7)
+                            amount <= 5998:
+                            :...existing_loans_count <= 1: no (11.6/3.9)
+                                existing_loans_count > 1:
+                                :...existing_loans_count > 2: no (2.7)
+                                    existing_loans_count <= 2:
+                                    :...age > 54: yes (3.9)
+                                        age <= 54:
+                                        :...age > 44: no (5)
+                                            age <= 44:
+                                            :...amount <= 5324: yes (30.9/10.8)
+                                                amount > 5324: no (2.7)
+
+-----  Trial 5:  -----
+
+Decision tree:
+
+checking_balance = unknown:
+:...other_credit = store: no (17.3/6.3)
+:   other_credit = bank:
+:   :...purpose = business: yes (8.9/4.1)
+:   :   purpose in {car0,education,renovations}: no (7.2/1.8)
+:   :   purpose = car:
+:   :   :...credit_history in {critical,perfect,poor,very good}: yes (17.2/4.4)
+:   :   :   credit_history = good: no (3.5)
+:   :   purpose = furniture/appliances:
+:   :   :...months_loan_duration <= 13: yes (6.5/1.6)
+:   :       months_loan_duration > 13: no (17.4/2.5)
+:   other_credit = none:
+:   :...credit_history in {perfect,very good}: no (2.3)
+:       credit_history = critical:
+:       :...amount <= 6967: no (50.3/2.5)
+:       :   amount > 6967: yes (8.9/3.4)
+:       credit_history = good:
+:       :...existing_loans_count <= 1: no (86.1/19.3)
+:       :   existing_loans_count > 1:
+:       :   :...percent_of_income <= 2: yes (11.5/1.2)
+:       :       percent_of_income > 2: no (7.2/2.1)
+:       credit_history = poor:
+:       :...percent_of_income <= 3: no (13.6/1)
+:           percent_of_income > 3:
+:           :...amount <= 1526: no (3.4)
+:               amount > 1526: yes (15.7/5.7)
+checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+:...savings_balance in {> 1000 DM,500 - 1000 DM}: no (33.1/13.9)
+    savings_balance = 100 - 500 DM:
+    :...existing_loans_count > 3: yes (3.5)
+    :   existing_loans_count <= 3:
+    :   :...credit_history in {critical,poor}: no (12/1.4)
+    :       credit_history in {perfect,very good}: yes (9.7/2.8)
+    :       credit_history = good:
+    :       :...months_loan_duration > 30: yes (6.3)
+    :           months_loan_duration <= 30:
+    :           :...amount <= 836: yes (3.8)
+    :               amount > 836: no (25.9/7.2)
+    savings_balance = unknown:
+    :...months_loan_duration <= 11: no (9.8)
+    :   months_loan_duration > 11:
+    :   :...months_loan_duration > 36: no (8.3)
+    :       months_loan_duration <= 36:
+    :       :...purpose in {business,education,renovations}: no (8.9/1.8)
+    :           purpose = car0: yes (1.8)
+    :           purpose = car:
+    :           :...amount <= 1804: yes (9.3)
+    :           :   amount > 1804: no (14.4/4.1)
+    :           purpose = furniture/appliances:
+    :           :...housing in {other,rent}: yes (6.8/0.7)
+    :               housing = own: no (25.6/8.1)
+    savings_balance = < 100 DM:
+    :...months_loan_duration > 47: yes (29.2/4.2)
+        months_loan_duration <= 47:
+        :...credit_history in {perfect,very good}: yes (42.5/16.6)
+            credit_history = poor:
+            :...phone = no: no (10.6/2.3)
+            :   phone = yes: yes (15.2/2.5)
+            credit_history = critical:
+            :...dependents > 1: no (11/2)
+            :   dependents <= 1:
+            :   :...housing = other: no (3.3)
+            :       housing = rent: yes (14.4/4.7)
+            :       housing = own:
+            :       :...purpose in {business,car0,renovations}: no (6.4/1.8)
+            :           purpose = education: yes (2.8/0.4)
+            :           purpose = car:
+            :           :...age <= 29: yes (5.3)
+            :           :   age > 29: no (20.3/5.1)
+            :           purpose = furniture/appliances:
+            :           :...phone = yes: no (4.6)
+            :               phone = no:
+            :               :...years_at_residence <= 3: yes (14.4/4.8)
+            :                   years_at_residence > 3: no (9.3/0.8)
+            credit_history = good:
+            :...job = unemployed: yes (2.9)
+                job = management:
+                :...amount <= 7582: no (18.8/3.8)
+                :   amount > 7582: yes (11.1/2)
+                job = skilled:
+                :...employment_duration = 1 - 4 years: yes (61/25.1)
+                :   employment_duration = unemployed: no (2.1)
+                :   employment_duration = < 1 year:
+                :   :...amount <= 3124: yes (32.1/10.7)
+                :   :   amount > 3124: no (6.1)
+                :   employment_duration = > 7 years:
+                :   :...age <= 33: no (3.7)
+                :   :   age > 33: yes (15.5/4.9)
+                :   employment_duration = 4 - 7 years:
+                :   :...dependents <= 1: yes (20/8.3)
+                :       dependents > 1: no (5.5/0.9)
+                job = unskilled:
+                :...months_loan_duration <= 8: no (5.7)
+                    months_loan_duration > 8:
+                    :...employment_duration in {< 1 year,
+                        :                       unemployed}: yes (21.8/5.6)
+                        employment_duration in {> 7 years,
+                        :                       4 - 7 years}: no (13.3/4.3)
+                        employment_duration = 1 - 4 years:
+                        :...phone = yes: yes (3.8/0.4)
+                            phone = no:
+                            :...checking_balance in {< 0 DM,
+                                :                    1 - 200 DM}: no (26.4/9.3)
+                                checking_balance = > 200 DM: yes (4.9)
+
+-----  Trial 6:  -----
+
+Decision tree:
+
+checking_balance in {> 200 DM,unknown}:
+:...purpose in {business,car0}: no (47.2/16.3)
+:   purpose = renovations: yes (6.8/3)
+:   purpose = education:
+:   :...years_at_residence <= 2: yes (11/2)
+:   :   years_at_residence > 2: no (14.3/4.9)
+:   purpose = car:
+:   :...other_credit in {none,store}: no (82.6/19.2)
+:   :   other_credit = bank:
+:   :   :...existing_loans_count <= 1: no (11.2/3.9)
+:   :       existing_loans_count > 1: yes (13.4/3.5)
+:   purpose = furniture/appliances:
+:   :...age > 44: no (20.8)
+:       age <= 44:
+:       :...credit_history in {critical,poor,very good}: no (42.4/8.2)
+:           credit_history = perfect: yes (1.8/0.6)
+:           credit_history = good:
+:           :...existing_loans_count > 1: yes (14.7/4)
+:               existing_loans_count <= 1:
+:               :...job in {management,skilled,unemployed}: no (51.6/13.3)
+:                   job = unskilled: yes (16.8/4.1)
+checking_balance in {< 0 DM,1 - 200 DM}:
+:...years_at_residence <= 1:
+    :...employment_duration = unemployed: yes (6.4)
+    :   employment_duration in {< 1 year,> 7 years,1 - 4 years,4 - 7 years}:
+    :   :...housing in {other,own}: no (78/21.9)
+    :       housing = rent: yes (9.7/3.2)
+    years_at_residence > 1:
+    :...employment_duration = 4 - 7 years: no (67/24.6)
+        employment_duration = unemployed:
+        :...dependents > 1: yes (7.5/0.6)
+        :   dependents <= 1:
+        :   :...credit_history in {critical,good,very good}: no (23/2.7)
+        :       credit_history in {perfect,poor}: yes (5.5/0.9)
+        employment_duration = < 1 year:
+        :...savings_balance in {> 1000 DM,100 - 500 DM,
+        :   :                   500 - 1000 DM}: yes (17.6/2.4)
+        :   savings_balance = unknown: no (6/2.1)
+        :   savings_balance = < 100 DM:
+        :   :...months_loan_duration > 22: yes (22.2/3)
+        :       months_loan_duration <= 22:
+        :       :...dependents > 1: no (2.1)
+        :           dependents <= 1:
+        :           :...months_loan_duration <= 12: yes (8.4/2)
+        :               months_loan_duration > 12: no (14.6/2.8)
+        employment_duration = > 7 years:
+        :...months_loan_duration > 40: yes (5.8)
+        :   months_loan_duration <= 40:
+        :   :...purpose in {business,car0,education}: yes (20.2/6.2)
+        :       purpose = renovations: no (1.3)
+        :       purpose = furniture/appliances:
+        :       :...years_at_residence <= 3: yes (15.3/3.3)
+        :       :   years_at_residence > 3:
+        :       :   :...amount <= 5711: no (21.9/3.7)
+        :       :       amount > 5711: yes (5.3)
+        :       purpose = car:
+        :       :...months_loan_duration <= 18: yes (18.6/4.1)
+        :           months_loan_duration > 18:
+        :           :...job = unemployed: no (0)
+        :               job = unskilled: yes (2.3)
+        :               job in {management,skilled}:
+        :               :...existing_loans_count <= 3: no (18.3/2.8)
+        :                   existing_loans_count > 3: yes (2.1)
+        employment_duration = 1 - 4 years:
+        :...savings_balance = > 1000 DM: no (2.9)
+            savings_balance in {100 - 500 DM,500 - 1000 DM}: yes (20.2/6.7)
+            savings_balance = unknown:
+            :...other_credit in {bank,store}: no (2.8)
+            :   other_credit = none: yes (17.4/7.3)
+            savings_balance = < 100 DM:
+            :...months_loan_duration > 36: yes (11.3)
+                months_loan_duration <= 36:
+                :...purpose in {business,education,
+                    :           renovations}: yes (12.4/3.2)
+                    purpose = car0: no (3/1.4)
+                    purpose = car:
+                    :...housing = other: yes (1)
+                    :   housing = rent: no (13.1/1.3)
+                    :   housing = own:
+                    :   :...dependents > 1: no (3.4)
+                    :       dependents <= 1:
+                    :       :...years_at_residence <= 3: yes (12.5/3.7)
+                    :           years_at_residence > 3: no (6.7/0.7)
+                    purpose = furniture/appliances:
+                    :...months_loan_duration > 24: no (5.6)
+                        months_loan_duration <= 24:
+                        :...other_credit = bank: yes (9.3/2.7)
+                            other_credit = store: no (4.3)
+                            other_credit = none:
+                            :...percent_of_income <= 1: yes (4.9)
+                                percent_of_income > 1:
+                                :...amount <= 1164: no (14)
+                                    amount > 1164:
+                                    :...phone = yes: yes (4.4)
+                                        phone = no:
+                                        :...age <= 24: yes (13.6/1.9)
+                                            age > 24: no (23.6/7.8)
+
+-----  Trial 7:  -----
+
+Decision tree:
+
+months_loan_duration <= 8:
+:...existing_loans_count > 1: no (12.1)
+:   existing_loans_count <= 1:
+:   :...amount > 3161: yes (6.1/0.6)
+:       amount <= 3161:
+:       :...age <= 25: yes (9.4/3.2)
+:           age > 25: no (33/2.6)
+months_loan_duration > 8:
+:...checking_balance = < 0 DM:
+    :...credit_history = critical: no (45.5/18.9)
+    :   credit_history in {perfect,poor,very good}: yes (50.8/15.6)
+    :   credit_history = good:
+    :   :...purpose in {business,car0}: no (7.7/1.3)
+    :       purpose in {education,renovations}: yes (11.2/2.8)
+    :       purpose = car:
+    :       :...savings_balance in {> 1000 DM,100 - 500 DM}: no (2.9)
+    :       :   savings_balance in {500 - 1000 DM,unknown}: yes (10.9/3.1)
+    :       :   savings_balance = < 100 DM:
+    :       :   :...years_at_residence <= 2: yes (18.3/3)
+    :       :       years_at_residence > 2:
+    :       :       :...existing_loans_count <= 1: no (23.8/9.1)
+    :       :           existing_loans_count > 1: yes (2.4)
+    :       purpose = furniture/appliances:
+    :       :...savings_balance in {> 1000 DM,500 - 1000 DM}: no (1.7)
+    :           savings_balance in {100 - 500 DM,unknown}: yes (15/3.3)
+    :           savings_balance = < 100 DM:
+    :           :...phone = yes: yes (15.5/2.6)
+    :               phone = no:
+    :               :...years_at_residence <= 1: no (13.4/1.3)
+    :                   years_at_residence > 1:
+    :                   :...percent_of_income <= 1: no (6.6/1)
+    :                       percent_of_income > 1:
+    :                       :...age <= 23: yes (7.5)
+    :                           age > 23:
+    :                           :...housing in {other,rent}: no (6.1/0.6)
+    :                               housing = own:
+    :                               :...months_loan_duration > 28: yes (7.7)
+    :                                   months_loan_duration <= 28:
+    :                                   :...other_credit in {bank,
+    :                                       :                store}: yes (8.1/2.1)
+    :                                       other_credit = none: no (19.7/5.9)
+    checking_balance in {> 200 DM,1 - 200 DM,unknown}:
+    :...savings_balance = > 1000 DM:
+        :...housing = other: yes (5.5)
+        :   housing in {own,rent}:
+        :   :...existing_loans_count <= 2: no (16.6)
+        :       existing_loans_count > 2: yes (2.1)
+        savings_balance = 100 - 500 DM:
+        :...purpose in {business,car0,renovations}: no (15.7/1.9)
+        :   purpose = education: yes (7/0.5)
+        :   purpose = furniture/appliances:
+        :   :...months_loan_duration <= 27: no (16.6/3.8)
+        :   :   months_loan_duration > 27: yes (3.8)
+        :   purpose = car:
+        :   :...dependents > 1: yes (4.2/0.5)
+        :       dependents <= 1:
+        :       :...age <= 29: yes (12/2.8)
+        :           age > 29: no (10.7/1.8)
+        savings_balance = 500 - 1000 DM:
+        :...existing_loans_count > 2: yes (3.5)
+        :   existing_loans_count <= 2:
+        :   :...job in {management,unemployed}: no (6)
+        :       job in {skilled,unskilled}:
+        :       :...other_credit = bank: yes (4.7)
+        :           other_credit in {none,store}: no (21.8/7.7)
+        savings_balance = unknown:
+        :...purpose in {business,car,car0,education,
+        :   :           renovations}: no (69.3/20.1)
+        :   purpose = furniture/appliances:
+        :   :...months_loan_duration > 18: no (16.8/1.2)
+        :       months_loan_duration <= 18:
+        :       :...age <= 24: no (5)
+        :           age > 24: yes (21.6/6.9)
+        savings_balance = < 100 DM:
+        :...months_loan_duration > 26:
+            :...years_at_residence <= 1: no (14.4/4.8)
+            :   years_at_residence > 1:
+            :   :...percent_of_income <= 1: no (8.6/2.5)
+            :       percent_of_income > 1: yes (66.3/17.7)
+            months_loan_duration <= 26:
+            :...age > 47: no (16/0.6)
+                age <= 47:
+                :...dependents > 1:
+                    :...age <= 33: no (5.3)
+                    :   age > 33:
+                    :   :...existing_loans_count > 2: no (2.1)
+                    :       existing_loans_count <= 2:
+                    :       :...months_loan_duration <= 11: no (2.6)
+                    :           months_loan_duration > 11: yes (21.7/1)
+                    dependents <= 1:
+                    :...existing_loans_count > 1:
+                        :...amount <= 8133: no (61.5/14.6)
+                        :   amount > 8133: yes (5.4)
+                        existing_loans_count <= 1:
+                        :...purpose in {business,car0,
+                            :           education}: no (15.1/6.6)
+                            purpose = renovations: yes (2.6)
+                            purpose in {car,furniture/appliances}:
+                            :...checking_balance = > 200 DM: no (14.1/3.4)
+                                checking_balance = unknown:
+                                :...age <= 25: yes (12.5/4)
+                                :   age > 25: no (11.9)
+                                checking_balance = 1 - 200 DM:
+                                :...other_credit in {bank,
+                                    :                store}: yes (9.4/2.3)
+                                    other_credit = none:
+                                    :...housing = other: yes (2.3)
+                                        housing = rent: no (12.5/4.1)
+                                        housing = own:
+                                        :...age > 34: yes (7.5/0.5)
+                                            age <= 34: [S1]
+
+SubTree [S1]
+
+months_loan_duration <= 9: yes (8.7/2.2)
+months_loan_duration > 9: no (21.2/7.2)
+
+-----  Trial 8:  -----
+
+Decision tree:
+
+checking_balance = unknown:
+:...employment_duration in {> 7 years,4 - 7 years}:
+:   :...months_loan_duration > 24: no (28.1)
+:   :   months_loan_duration <= 24:
+:   :   :...amount <= 10222: no (75.5/20.4)
+:   :       amount > 10222: yes (3.6)
+:   employment_duration in {< 1 year,1 - 4 years,unemployed}:
+:   :...dependents > 1:
+:       :...other_credit in {bank,none}: no (17.2/1.6)
+:       :   other_credit = store: yes (2.9/0.4)
+:       dependents <= 1:
+:       :...amount > 4455: yes (50.2/14.1)
+:           amount <= 4455:
+:           :...percent_of_income <= 2: no (21.9/3.1)
+:               percent_of_income > 2:
+:               :...employment_duration = < 1 year: no (8.5/1.2)
+:                   employment_duration = unemployed: yes (6.6/1.6)
+:                   employment_duration = 1 - 4 years:
+:                   :...existing_loans_count > 1: no (20.7/4)
+:                       existing_loans_count <= 1:
+:                       :...savings_balance in {> 1000 DM,
+:                           :                   100 - 500 DM}: no (4.8)
+:                           savings_balance in {< 100 DM,500 - 1000 DM,unknown}:
+:                           :...other_credit in {bank,store}: yes (5.3)
+:                               other_credit = none:
+:                               :...age <= 31: yes (21.1/5.9)
+:                                   age > 31: no (5.4)
+checking_balance in {< 0 DM,> 200 DM,1 - 200 DM}:
+:...savings_balance = > 1000 DM: no (12.6/4.4)
+    savings_balance = 500 - 1000 DM:
+    :...other_credit in {bank,none}: yes (20.8/7.3)
+    :   other_credit = store: no (1.6)
+    savings_balance = 100 - 500 DM:
+    :...existing_loans_count > 3: yes (3.8)
+    :   existing_loans_count <= 3:
+    :   :...credit_history in {critical,poor}: no (12.9/1.4)
+    :       credit_history in {perfect,very good}: yes (12.3/3.8)
+    :       credit_history = good:
+    :       :...months_loan_duration > 30: yes (4.1)
+    :           months_loan_duration <= 30:
+    :           :...housing in {other,rent}: yes (8.3/2.1)
+    :               housing = own:
+    :               :...purpose in {business,car,car0,education,
+    :                   :           renovations}: no (11.2/0.5)
+    :                   purpose = furniture/appliances: yes (7.8/2.1)
+    savings_balance = unknown:
+    :...months_loan_duration <= 11: no (6.9)
+    :   months_loan_duration > 11:
+    :   :...job in {management,unemployed,unskilled}: no (22.6/7)
+    :       job = skilled:
+    :       :...purpose in {car0,renovations}: yes (0)
+    :           purpose in {business,education}: no (10.5)
+    :           purpose in {car,furniture/appliances}:
+    :           :...amount <= 1412: yes (7.7)
+    :               amount > 1412:
+    :               :...existing_loans_count > 1: no (4.5)
+    :                   existing_loans_count <= 1:
+    :                   :...amount > 10366: yes (2.6)
+    :                       amount <= 10366:
+    :                       :...purpose = car: no (10.6/3.4)
+    :                           purpose = furniture/appliances: yes (15.5/6.2)
+    savings_balance = < 100 DM:
+    :...months_loan_duration <= 15:
+        :...credit_history in {perfect,very good}: yes (20.7/7.6)
+        :   credit_history = poor: no (7.6/1.8)
+        :   credit_history = critical:
+        :   :...dependents > 1: no (4.5)
+        :   :   dependents <= 1:
+        :   :   :...job in {unemployed,unskilled}: no (5.8)
+        :   :       job in {management,skilled}:
+        :   :       :...percent_of_income <= 3: yes (10.5/2.7)
+        :   :           percent_of_income > 3: no (15.5/3.4)
+        :   credit_history = good:
+        :   :...phone = yes:
+        :       :...amount <= 3021: no (17.8/0.6)
+        :       :   amount > 3021: yes (4.2/0.2)
+        :       phone = no:
+        :       :...purpose in {business,car0,renovations}: no (4.3/1)
+        :           purpose = education: yes (4.7)
+        :           purpose = car:
+        :           :...months_loan_duration > 13: no (2.8)
+        :           :   months_loan_duration <= 13:
+        :           :   :...checking_balance in {< 0 DM,
+        :           :       :                    1 - 200 DM}: yes (20.6/4.8)
+        :           :       checking_balance = > 200 DM: no (2.3)
+        :           purpose = furniture/appliances:
+        :           :...other_credit = bank: no (3.6)
+        :               other_credit = store: yes (4.1)
+        :               other_credit = none:
+        :               :...checking_balance = < 0 DM: no (15.7/1.8)
+        :                   checking_balance in {> 200 DM,1 - 200 DM}:
+        :                   :...months_loan_duration <= 7: no (4.6)
+        :                       months_loan_duration > 7:
+        :                       :...amount > 2625: no (2.8)
+        :                           amount <= 2625:
+        :                           :...amount <= 601: no (2.4)
+        :                               amount > 601: yes (24.7/5.6)
+        months_loan_duration > 15:
+        :...months_loan_duration > 47: yes (28.1/4.8)
+            months_loan_duration <= 47:
+            :...amount <= 2320: yes (83.1/19.4)
+                amount > 2320:
+                :...percent_of_income <= 1:
+                    :...amount <= 11054: no (24/4.1)
+                    :   amount > 11054: yes (2.3)
+                    percent_of_income > 1:
+                    :...credit_history = perfect: no (12.6/5.2)
+                        credit_history in {poor,very good}: yes (12.1/2.4)
+                        credit_history = critical:
+                        :...age <= 31: yes (12.8/2)
+                        :   age > 31: no (16.6/3)
+                        credit_history = good:
+                        :...other_credit = store: no (4.9)
+                            other_credit in {bank,none}:
+                            :...job = management: no (16.2/6.3)
+                                job in {unemployed,unskilled}: yes (14.8/4.3)
+                                job = skilled:
+                                :...housing = other: no (3.8)
+                                    housing in {own,rent}: [S1]
+
+SubTree [S1]
+
+checking_balance = < 0 DM: yes (22.4/4.4)
+checking_balance in {> 200 DM,1 - 200 DM}: no (19.1/6.6)
+
+-----  Trial 9:  -----
+
+Decision tree:
+
+checking_balance in {> 200 DM,unknown}:
+:...purpose in {business,education,renovations}:
+:   :...employment_duration = 4 - 7 years: no (9.1)
+:   :   employment_duration in {< 1 year,> 7 years,1 - 4 years,unemployed}:
+:   :   :...other_credit = store: yes (7.1/0.4)
+:   :       other_credit in {bank,none}:
+:   :       :...credit_history in {critical,perfect}: no (19.3/4.7)
+:   :           credit_history in {good,poor,very good}: yes (38.8/11.6)
+:   purpose in {car,car0,furniture/appliances}:
+:   :...existing_loans_count <= 1: no (147.5/30.2)
+:       existing_loans_count > 1:
+:       :...checking_balance = > 200 DM: yes (12.9/4.2)
+:           checking_balance = unknown:
+:           :...housing = other: no (4.5)
+:               housing = rent: yes (11.7/3.6)
+:               housing = own:
+:               :...months_loan_duration <= 16: no (18.7)
+:                   months_loan_duration > 16:
+:                   :...credit_history in {good,perfect,
+:                       :                  very good}: yes (12.4/1.9)
+:                       credit_history in {critical,poor}:
+:                       :...percent_of_income <= 2: no (11.3)
+:                           percent_of_income > 2:
+:                           :...employment_duration in {< 1 year,4 - 7 years,
+:                               :                       unemployed}: no (10.9)
+:                               employment_duration in {> 7 years,1 - 4 years}: [S1]
+checking_balance in {< 0 DM,1 - 200 DM}:
+:...months_loan_duration > 26:
+    :...months_loan_duration > 47: yes (29.7/5.5)
+    :   months_loan_duration <= 47:
+    :   :...dependents <= 1: yes (86.5/30.6)
+    :       dependents > 1: no (14.8/5.1)
+    months_loan_duration <= 26:
+    :...housing = other:
+        :...amount > 7409: yes (7.9)
+        :   amount <= 7409:
+        :   :...job in {management,skilled}: no (22.5/4.7)
+        :       job in {unemployed,unskilled}: yes (5)
+        housing = rent:
+        :...credit_history = perfect: yes (6.6)
+        :   credit_history in {critical,good,poor,very good}:
+        :   :...other_credit in {bank,store}: yes (18.4/5.6)
+        :       other_credit = none:
+        :       :...months_loan_duration > 22:
+        :           :...percent_of_income <= 2: no (7.3/2.6)
+        :           :   percent_of_income > 2: yes (14.7/1.4)
+        :           months_loan_duration <= 22:
+        :           :...job in {management,unemployed,unskilled}: no (16.8/1.9)
+        :               job = skilled:
+        :               :...credit_history = very good: yes (0)
+        :                   credit_history in {critical,poor}: no (12/3)
+        :                   credit_history = good:
+        :                   :...amount <= 1382: yes (9.6)
+        :                       amount > 1382: no (16.2/5.5)
+        housing = own:
+        :...employment_duration = unemployed: yes (16.9/4.2)
+            employment_duration in {< 1 year,> 7 years,1 - 4 years,4 - 7 years}:
+            :...savings_balance in {> 1000 DM,500 - 1000 DM}: no (16.4/2.8)
+                savings_balance = 100 - 500 DM:
+                :...amount <= 1442: yes (8.8/1.8)
+                :   amount > 1442: no (19.2/1.2)
+                savings_balance = unknown:
+                :...credit_history in {critical,good,perfect,
+                :   :                  poor}: no (30.1/6.7)
+                :   credit_history = very good: yes (3.8)
+                savings_balance = < 100 DM:
+                :...job = management: yes (6.8/2)
+                    job in {unemployed,unskilled}: no (69.1/23.1)
+                    job = skilled:
+                    :...purpose in {education,renovations}: yes (6.3)
+                        purpose in {business,car,car0,furniture/appliances}:
+                        :...months_loan_duration <= 7: no (7)
+                            months_loan_duration > 7:
+                            :...credit_history in {perfect,
+                                :                  poor}: no (9.4/1.5)
+                                credit_history = very good: yes (3.1)
+                                credit_history = critical:
+                                :...percent_of_income <= 2: no (6.1)
+                                :   percent_of_income > 2:
+                                :   :...percent_of_income <= 3: yes (4.5)
+                                :       percent_of_income > 3: no (16.1/5.3)
+                                credit_history = good:
+                                :...years_at_residence > 3: no (19.1/3.6)
+                                    years_at_residence <= 3:
+                                    :...existing_loans_count > 1: no (4.1/0.9)
+                                        existing_loans_count <= 1:
+                                        :...years_at_residence > 2: yes (14.1/2.8)
+                                            years_at_residence <= 2:
+                                            :...amount <= 999: yes (6.8/1.4)
+                                                amount > 999:
+                                                :...age <= 24: yes (10.4/2)
+                                                    age > 24: no (18.2/2)
+
+SubTree [S1]
+
+purpose = car: yes (12.4/4.1)
+purpose in {car0,furniture/appliances}: no (6.9/1)
+
+
+Evaluation on training data (900 cases):
+
+Trial	    Decision Tree   
+-----	  ----------------  
+	  Size      Errors  
+
+   0	    66  125(13.9%)
+   1	    40  205(22.8%)
+   2	    46  196(21.8%)
+   3	    45  193(21.4%)
+   4	    68  163(18.1%)
+   5	    62  175(19.4%)
+   6	    56  186(20.7%)
+   7	    62  188(20.9%)
+   8	    66  156(17.3%)
+   9	    49  200(22.2%)
+boost	         31( 3.4%)   <<
+
+
+	   (a)   (b)    <-classified as
+	  ----  ----
+	   626     6    (a): class no
+	    25   243    (b): class yes
+
+
+	Attribute usage:
+
+	100.00%	checking_balance
+	100.00%	months_loan_duration
+	100.00%	amount
+	100.00%	employment_duration
+	 98.56%	credit_history
+	 97.44%	savings_balance
+	 94.11%	purpose
+	 88.44%	other_credit
+	 82.44%	existing_loans_count
+	 80.89%	job
+	 75.67%	age
+	 71.89%	percent_of_income
+	 71.67%	housing
+	 70.78%	dependents
+	 69.33%	years_at_residence
+	 49.56%	phone
+
+
+Time: 0.0 secs
+
+R > credit_boost_pred10<-predict(credit_boost10, credit_test)
+R > CrossTable(credit_test$default, credit_boost_pred10, prop.chisq=FALSE, prop.c=FALSE, prop.r=FALSE, dnn=c("Actual", "Predicted"))
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+             | Predicted 
+      Actual |        no |       yes | Row Total | 
+-------------|-----------|-----------|-----------|
+          no |        60 |         8 |        68 | 
+             |     0.600 |     0.080 |           | 
+-------------|-----------|-----------|-----------|
+         yes |        15 |        17 |        32 | 
+             |     0.150 |     0.170 |           | 
+-------------|-----------|-----------|-----------|
+Column Total |        75 |        25 |       100 | 
+-------------|-----------|-----------|-----------|
+
+ 
+R > matrix(c(0,1,4,0), nrow=2)
+     [,1] [,2]
+[1,]    0    4
+[2,]    1    0
+R > 6/32
+[1] 0.1875
+R > str(credit)
+'data.frame':	1000 obs. of  17 variables:
+ $ checking_balance    : Factor w/ 4 levels "< 0 DM","> 200 DM",..: 1 3 4 1 1 4 4 3 4 3 ...
+ $ months_loan_duration: int  6 48 12 42 24 36 24 36 12 30 ...
+ $ credit_history      : Factor w/ 5 levels "critical","good",..: 1 2 1 2 4 2 2 2 2 1 ...
+ $ purpose             : Factor w/ 6 levels "business","car",..: 5 5 4 5 2 4 5 2 5 2 ...
+ $ amount              : int  1169 5951 2096 7882 4870 9055 2835 6948 3059 5234 ...
+ $ savings_balance     : Factor w/ 5 levels "< 100 DM","> 1000 DM",..: 5 1 1 1 1 5 4 1 2 1 ...
+ $ employment_duration : Factor w/ 5 levels "< 1 year","> 7 years",..: 2 3 4 4 3 3 2 3 4 5 ...
+ $ percent_of_income   : int  4 2 2 2 3 2 3 2 2 4 ...
+ $ years_at_residence  : int  4 2 3 4 4 4 4 2 4 2 ...
+ $ age                 : int  67 22 49 45 53 35 53 35 61 28 ...
+ $ other_credit        : Factor w/ 3 levels "bank","none",..: 2 2 2 2 2 2 2 2 2 2 ...
+ $ housing             : Factor w/ 3 levels "other","own",..: 2 2 2 1 1 1 2 3 2 2 ...
+ $ existing_loans_count: int  2 1 1 1 2 1 1 1 1 2 ...
+ $ job                 : Factor w/ 4 levels "management","skilled",..: 2 2 4 2 2 4 2 1 4 1 ...
+ $ dependents          : int  1 1 2 2 2 2 1 1 1 1 ...
+ $ phone               : Factor w/ 2 levels "no","yes": 2 1 1 1 1 2 1 2 1 1 ...
+ $ default             : Factor w/ 2 levels "no","yes": 1 2 1 1 2 1 1 1 1 2 ...
+R > xtabs(~checking_balance+savings_balance, data=credit)
+                savings_balance
+checking_balance < 100 DM > 1000 DM 100 - 500 DM 500 - 1000 DM unknown
+      < 0 DM          219         6           12             8      29
+      > 200 DM         41         3            5             4      10
+      1 - 200 DM      152        14           47            11      45
+      unknown         191        25           39            40      99
+R > mushrooms <- read.csv("../chapter 5/mushrooms.csv", stringsAsFactors=TRUE)
+R > str(mushrooms)
+'data.frame':	8124 obs. of  23 variables:
+ $ type                    : Factor w/ 2 levels "edible","poisonous": 2 1 1 2 1 1 1 1 2 1 ...
+ $ cap_shape               : Factor w/ 6 levels "bell","conical",..: 3 3 1 3 3 3 1 1 3 1 ...
+ $ cap_surface             : Factor w/ 4 levels "fibrous","grooves",..: 4 4 4 3 4 3 4 3 3 4 ...
+ $ cap_color               : Factor w/ 10 levels "brown","buff",..: 1 10 9 9 4 10 9 9 9 10 ...
+ $ bruises                 : Factor w/ 2 levels "no","yes": 2 2 2 2 1 2 2 2 2 2 ...
+ $ odor                    : Factor w/ 9 levels "almond","anise",..: 8 1 2 8 7 1 1 2 8 1 ...
+ $ gill_attachment         : Factor w/ 2 levels "attached","free": 2 2 2 2 2 2 2 2 2 2 ...
+ $ gill_spacing            : Factor w/ 2 levels "close","crowded": 1 1 1 1 2 1 1 1 1 1 ...
+ $ gill_size               : Factor w/ 2 levels "broad","narrow": 2 1 1 2 1 1 1 1 2 1 ...
+ $ gill_color              : Factor w/ 12 levels "black","brown",..: 1 1 2 2 1 2 5 2 8 5 ...
+ $ stalk_shape             : Factor w/ 2 levels "enlarging","tapering": 1 1 1 1 2 1 1 1 1 1 ...
+ $ stalk_root              : Factor w/ 5 levels "bulbous","club",..: 3 2 2 3 3 2 2 2 3 2 ...
+ $ stalk_surface_above_ring: Factor w/ 4 levels "fibrous","scaly",..: 4 4 4 4 4 4 4 4 4 4 ...
+ $ stalk_surface_below_ring: Factor w/ 4 levels "fibrous","scaly",..: 4 4 4 4 4 4 4 4 4 4 ...
+ $ stalk_color_above_ring  : Factor w/ 9 levels "brown","buff",..: 8 8 8 8 8 8 8 8 8 8 ...
+ $ stalk_color_below_ring  : Factor w/ 9 levels "brown","buff",..: 8 8 8 8 8 8 8 8 8 8 ...
+ $ veil_type               : Factor w/ 1 level "partial": 1 1 1 1 1 1 1 1 1 1 ...
+ $ veil_color              : Factor w/ 4 levels "brown","orange",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ ring_number             : Factor w/ 3 levels "none","one","two": 2 2 2 2 2 2 2 2 2 2 ...
+ $ ring_type               : Factor w/ 5 levels "evanescent","flaring",..: 5 5 5 5 1 5 5 5 5 5 ...
+ $ spore_print_color       : Factor w/ 9 levels "black","brown",..: 1 2 2 1 2 1 1 2 1 1 ...
+ $ population              : Factor w/ 6 levels "abundant","clustered",..: 4 3 3 4 1 3 3 4 5 4 ...
+ $ habitat                 : Factor w/ 7 levels "grasses","leaves",..: 5 1 3 5 1 1 3 3 1 3 ...
+R > mushrooms$veil_type<-NULL
+R > table(mushrooms$type)
+
+   edible poisonous 
+     4208      3916 
+R > search()
+ [1] ".GlobalEnv"        "package:C50"       "package:class"     "package:gmodels"   "package:ggplot2"   "package:RWeka"     "package:psych"     "package:stats"    
+ [9] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets"  "KoreaEnv"          "package:methods"   "Autoloads"         "package:base"     
+R > ?OneR
+R > 
+R > mushrool_1R<-OneR(type~., data=mushrooms)
+R > mushroom_1R<-OneR(type~., data=mushrooms)
+R > rm(mushrool_1R)
+R > mushroom_1R
+odor:
+	almond	-> edible
+	anise	-> edible
+	creosote	-> poisonous
+	fishy	-> poisonous
+	foul	-> poisonous
+	musty	-> poisonous
+	none	-> edible
+	pungent	-> poisonous
+	spicy	-> poisonous
+(8004/8124 instances correct)
+
+R > install.packages("rpart", repos="http://cran.csiro.au")
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/rpart_4.1-10.tgz'을 시도합니다
+Content type 'application/x-gzip' length 902284 bytes (881 KB)
+==================================================
+downloaded 881 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+R > wine <- read.csv("../chapter 6/whitewines.csv")
+R > str(wine)
+'data.frame':	4898 obs. of  12 variables:
+ $ fixed.acidity       : num  6.7 5.7 5.9 5.3 6.4 7 7.9 6.6 7 6.5 ...
+ $ volatile.acidity    : num  0.62 0.22 0.19 0.47 0.29 0.14 0.12 0.38 0.16 0.37 ...
+ $ citric.acid         : num  0.24 0.2 0.26 0.1 0.21 0.41 0.49 0.28 0.3 0.33 ...
+ $ residual.sugar      : num  1.1 16 7.4 1.3 9.65 0.9 5.2 2.8 2.6 3.9 ...
+ $ chlorides           : num  0.039 0.044 0.034 0.036 0.041 0.037 0.049 0.043 0.043 0.027 ...
+ $ free.sulfur.dioxide : num  6 41 33 11 36 22 33 17 34 40 ...
+ $ total.sulfur.dioxide: num  62 113 123 74 119 95 152 67 90 130 ...
+ $ density             : num  0.993 0.999 0.995 0.991 0.993 ...
+ $ pH                  : num  3.41 3.22 3.49 3.48 2.99 3.25 3.18 3.21 2.88 3.28 ...
+ $ sulphates           : num  0.32 0.46 0.42 0.54 0.34 0.43 0.47 0.47 0.47 0.39 ...
+ $ alcohol             : num  10.4 8.9 10.1 11.2 10.9 ...
+ $ quality             : int  5 6 6 4 6 6 6 6 6 7 ...
+R > wine_train<-wine[1:3750,]
+R > wine_test<-wine[3751:4898,]
+R > library(rpart)
+R > m.rpart<-rpart(quality~., data=wine_train)
+R > m.rpart
+n= 3750 
+
+node), split, n, deviance, yval
+      * denotes terminal node
+
+ 1) root 3750 2945.53200 5.870933  
+   2) alcohol< 10.85 2372 1418.86100 5.604975  
+     4) volatile.acidity>=0.2275 1611  821.30730 5.432030  
+       8) volatile.acidity>=0.3025 688  278.97670 5.255814 *
+       9) volatile.acidity< 0.3025 923  505.04230 5.563380 *
+     5) volatile.acidity< 0.2275 761  447.36400 5.971091 *
+   3) alcohol>=10.85 1378 1070.08200 6.328737  
+     6) free.sulfur.dioxide< 10.5 84   95.55952 5.369048 *
+     7) free.sulfur.dioxide>=10.5 1294  892.13600 6.391036  
+      14) alcohol< 11.76667 629  430.11130 6.173291  
+        28) volatile.acidity>=0.465 11   10.72727 4.545455 *
+        29) volatile.acidity< 0.465 618  389.71680 6.202265 *
+      15) alcohol>=11.76667 665  403.99400 6.596992 *
+R > install.packages("rpart plot", repos="http://cran.csiro.au")
+경고메시지(들): 
+package ‘rpart plot’ is not available (for R version 3.2.1) 
+R > install.packages("rpart.plot", repos="http://cran.csiro.au")
+URL 'http://cran.csiro.au/bin/macosx/mavericks/contrib/3.2/rpart.plot_1.5.2.tgz'을 시도합니다
+Content type 'application/x-gzip' length 516513 bytes (504 KB)
+==================================================
+downloaded 504 KB
+
+
+다운로드된 바이너리 패키지들은 다음의 위치에 있습니다
+	/var/folders/_h/tg1th9bd4h98rjjb5vy9gn3m0000gn/T//Rtmp1IsbyJ/downloaded_packages
+R > library(rpart.plot)
+R > rpart.plot(m.rpart, digits=3)
+R > rpart.plot(m.rpart, digits=4, fallen.leaves = TRUE, type=3, extra=101)
+R > 
+  [복원됨]
+Last login: Mon Aug 17 10:27:15 on console
+Kee-Wonui-MacBook:~ coop2711$ R
+
+R version 3.2.1 (2015-06-18) -- "World-Famous Astronaut"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R은 자유 소프트웨어이며, 어떠한 형태의 보증없이 배포됩니다.
+또한, 일정한 조건하에서 이것을 재배포 할 수 있습니다.
+배포와 관련된 상세한 내용은 'license()' 또는 'licence()'을 통하여 확인할 수 있습니다.
+
+R은 많은 기여자들이 참여하는 공동프로젝트입니다.
+'contributors()'라고 입력하시면 이에 대한 더 많은 정보를 확인하실 수 있습니다.
+그리고, R 또는 R 패키지들을 출판물에 인용하는 방법에 대해서는 'citation()'을 통해 확인하시길 부탁드립니다.
+
+'demo()'를 입력하신다면 몇가지 데모를 보실 수 있으며, 'help()'를 입력하시면 온라인 도움말을 이용하실 수 있습니다.
+또한, 'help.start()'의 입력을 통하여 HTML 브라우저에 의한 도움말을 사용하실수 있습니다
+R의 종료를 원하시면 'q()'을 입력해주세요.
+
+R > loadhistory()
+R > 
