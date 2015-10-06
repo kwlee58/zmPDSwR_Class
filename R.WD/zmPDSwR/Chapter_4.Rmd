@@ -14,11 +14,11 @@ output: html_document
 ```{r}
 rm(list=ls())
 ls()
-load("../../zmPDSwR-master/Custdata//exampleData.rData")
+load("../../zmPDSwR-master/Custdata/exampleData.rData")
 ls()
 str(custdata)
 custdata.2 <- custdata
-(v.to.add <- c("age.normalized", "Median.Income", "income.norm", "gp", "income.lt.30K", "age.range"))
+(v.to.add <- c("is.employed.fix1", "age.normalized", "Median.Income", "income.norm", "gp", "income.lt.30K", "age.range"))
 #(index.to.add <- which(names(custdata) %in% v.to.add))
 (v.to.retain <- setdiff(names(custdata), v.to.add))
 #custdata <- custdata[-index.to.add]
@@ -66,7 +66,7 @@ custdata$is.employed.fix <- ifelse(is.na(custdata$is.employed), "not in active w
 summary(factor(custdata$is.employed.fix))
 ```
 
-* Missing values is numeric data
+* Missing values are numeric data
 
 ```{r}
 summary(custdata$Income)
@@ -150,11 +150,11 @@ str(custdata$age.range)
 ```{r}
 summary(custdata$age)
 mean.age <- mean(custdata$age)
-custdata$age.normalized <- custdata$age/mean.age
+custdata$age.normalized <- custdata$age-mean.age
 summary(custdata$age.normalized)
 ```
 
-* Summarizing age
+* Normalizing age
 
 ```{r}
 summary(custdata$age)
@@ -170,7 +170,7 @@ summary(scale(custdata$age))
 ```{r}
 ggplot(subset(custdata, custdata$income > 1000), aes(x = income, y = as.numeric(health.ins))) +
   geom_point(alpha = 0.5, position = position_jitter(w = 0.05, h = 0.05)) +
-  geom_smooth() + scale_x_log10() + annotation_logticks(sides = "bt")
+  geom_smooth(method="loess") + scale_x_log10() + annotation_logticks(sides = "bt")
 ```
 
 * Figure 4.4
